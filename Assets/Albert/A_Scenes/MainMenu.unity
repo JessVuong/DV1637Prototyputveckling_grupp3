@@ -2208,9 +2208,13 @@ PrefabInstance:
       propertyPath: m_text
       value: Start
       objectReference: {fileID: 0}
+    - target: {fileID: 4643738759916882406, guid: 42a03606a95f8524ea5c7ca0617c99e5, type: 3}
+      propertyPath: startGameScene
+      value: 
+      objectReference: {fileID: 102900000, guid: 8084e2d857b58c24db04067eb81365ce, type: 3}
     - target: {fileID: 5759749146477211303, guid: 42a03606a95f8524ea5c7ca0617c99e5, type: 3}
       propertyPath: m_Name
-      value: TitleCanvas
+      value: MainMenu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
