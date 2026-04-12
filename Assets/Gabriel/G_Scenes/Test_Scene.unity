@@ -353,6 +353,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 509213726745310897, guid: fac1e971f3442654db3cbf03c0d7aa0f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 943774790135503620, guid: fac1e971f3442654db3cbf03c0d7aa0f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.653267
@@ -580,6 +584,7 @@ GameObject:
   - component: {fileID: 1871713104}
   - component: {fileID: 1871713103}
   - component: {fileID: 1871713102}
+  - component: {fileID: 1871713105}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -661,6 +666,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1871713105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871713101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 336a33f971e033544946dc821cad9562, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Raycast_System
+  label: {fileID: 0}
+  LayersToCheck:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1001 &2130036768
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1278,17 +1299,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 509213726745310897, guid: fac1e971f3442654db3cbf03c0d7aa0f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 943774790135503620, guid: fac1e971f3442654db3cbf03c0d7aa0f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: -3.427
       objectReference: {fileID: 0}
     - target: {fileID: 943774790135503620, guid: fac1e971f3442654db3cbf03c0d7aa0f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 943774790135503620, guid: fac1e971f3442654db3cbf03c0d7aa0f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -10.933
       objectReference: {fileID: 0}
     - target: {fileID: 943774790135503620, guid: fac1e971f3442654db3cbf03c0d7aa0f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2303,17 +2328,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Doorframe 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2468656271680479796, guid: 9314d82346fbba940b52159b3ec9c862, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2468656271680479796, guid: 9314d82346fbba940b52159b3ec9c862, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 5228214411692171195, guid: 9314d82346fbba940b52159b3ec9c862, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: -0.63
       objectReference: {fileID: 0}
     - target: {fileID: 5228214411692171195, guid: 9314d82346fbba940b52159b3ec9c862, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5228214411692171195, guid: 9314d82346fbba940b52159b3ec9c862, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -11.682
       objectReference: {fileID: 0}
     - target: {fileID: 5228214411692171195, guid: 9314d82346fbba940b52159b3ec9c862, type: 3}
       propertyPath: m_LocalRotation.w
