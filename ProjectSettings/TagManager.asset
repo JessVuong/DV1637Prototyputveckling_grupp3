@@ -5,8 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - OBJ_Investigate
-  - OBJ_Interact
   - OBJ_Pickup
+  - OBJ_Ignite
+  - OBJ_Open
   layers:
   - Default
   - TransparentFX

@@ -357,6 +357,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 509213726745310897, guid: fac1e971f3442654db3cbf03c0d7aa0f, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 943774790135503620, guid: fac1e971f3442654db3cbf03c0d7aa0f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.653267
@@ -416,7 +420,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3066137838081706950, guid: d55fe1ed91024194ba4bfadb511c5264, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.12056
+      value: -4.24
       objectReference: {fileID: 0}
     - target: {fileID: 3066137838081706950, guid: d55fe1ed91024194ba4bfadb511c5264, type: 3}
       propertyPath: m_LocalPosition.y
@@ -424,7 +428,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3066137838081706950, guid: d55fe1ed91024194ba4bfadb511c5264, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 17.15785
+      value: 15.95
       objectReference: {fileID: 0}
     - target: {fileID: 3066137838081706950, guid: d55fe1ed91024194ba4bfadb511c5264, type: 3}
       propertyPath: m_LocalRotation.w
@@ -585,6 +589,7 @@ GameObject:
   - component: {fileID: 1871713103}
   - component: {fileID: 1871713102}
   - component: {fileID: 1871713105}
+  - component: {fileID: 1871713106}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -678,10 +683,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 336a33f971e033544946dc821cad9562, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Raycast_System
-  label: {fileID: 0}
+  toolTip: 
   LayersToCheck:
     serializedVersion: 2
     m_Bits: 64
+  Open: {fileID: 0}
+  Investigate: {fileID: 0}
+  Pickup: {fileID: 0}
+  Ignite: {fileID: 3415569290357836497, guid: d55fe1ed91024194ba4bfadb511c5264, type: 3}
+--- !u!114 &1871713106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871713101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e93aba63d578946b076778b0509da5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interact_system
 --- !u!1001 &2130036768
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1302,6 +1323,10 @@ PrefabInstance:
     - target: {fileID: 509213726745310897, guid: fac1e971f3442654db3cbf03c0d7aa0f, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 509213726745310897, guid: fac1e971f3442654db3cbf03c0d7aa0f, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 943774790135503620, guid: fac1e971f3442654db3cbf03c0d7aa0f, type: 3}
       propertyPath: m_LocalPosition.x
