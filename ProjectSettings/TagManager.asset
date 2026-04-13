@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - OBJ_Investigate
+  - OBJ_Pickup
+  - OBJ_Ignite
+  - OBJ_Open
   layers:
   - Default
   - TransparentFX
@@ -11,7 +15,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Object_Layer
   - 
   - 
   - 
