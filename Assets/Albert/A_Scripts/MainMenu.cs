@@ -6,13 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuScript : MonoBehaviour
 {
-    //The scene that loads when you press "Start Game"
-    public SceneAsset startGameScene;
 
     public void StartGame()
     {
         //Loads the scene MainMenu if MainMenu is in the SceneList
-        SceneManager.LoadScene(startGameScene.name, LoadSceneMode.Single);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
     }
 
     public void QuitGame()

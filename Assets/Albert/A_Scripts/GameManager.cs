@@ -26,7 +26,7 @@ public class GameManagerScript : MonoBehaviour
             else
             {
                 pauseMenu.Pause();
-                timer.StartTimer();
+                timer.StopTimer();
             }
         }
     }
