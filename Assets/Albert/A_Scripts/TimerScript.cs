@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class TimerScript : MonoBehaviour
 {
-    [SerializeField] float remainingTime;
+    public float remainingTime;
     bool isRunning = false;
     public GameManagerScript game;
 
@@ -21,6 +21,7 @@ public class TimerScript : MonoBehaviour
         
         if (remainingTime <= 0 )
         {
+            remainingTime = 0;
             game.Defeat();
         }
     }
