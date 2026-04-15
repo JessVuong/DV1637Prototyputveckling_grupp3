@@ -10,7 +10,7 @@ public class Inventory_System : MonoBehaviour
                                     {"Key_armory"   ,   "0" },
                                     {"Hammer"       ,   "0" },
                                     {"Gunpowder"    ,   "0" },
-                                    {"Connonball"   ,   "0" },
+                                    {"Cannonball"   ,   "0" },
                                     {"Fuse"         ,   "0" }
                                  };
 
