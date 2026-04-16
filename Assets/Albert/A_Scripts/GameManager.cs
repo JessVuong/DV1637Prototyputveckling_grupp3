@@ -25,12 +25,10 @@ public class GameManagerScript : MonoBehaviour
             if (gameIsPaused)
             {
                 pauseMenu.Resume();
-                timer.StartTimer();
             }
             else
             {
                 pauseMenu.Pause();
-                timer.StopTimer();
             }
         }
     }
