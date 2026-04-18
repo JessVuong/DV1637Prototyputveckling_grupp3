@@ -8,10 +8,12 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
     public GameManagerScript game;
+    public TimerScript timer;
 
     public void Resume()
     {
         //Resumes the game
+        timer.StartTimer();
         Cursor.lockState = CursorLockMode.Locked;
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
@@ -21,6 +23,7 @@ public class PauseMenu : MonoBehaviour
     public void Pause()
     {
         //Pauses the game
+        timer.StopTimer();
         Cursor.lockState = CursorLockMode.None;
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
