@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e10273178229a9d4b92f415161b7413c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraController
-  mSensitivity: 800
+  mSensitivity: 500
 --- !u!1 &4787537594460531450
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,7 +144,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a02483d5708c0b04e8b954be13e5d08d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterControllerScript
-  speed: 12
+  speed: 6
+  friction: 100
 --- !u!143 &3026290210997472565
 CharacterController:
   m_ObjectHideFlags: 0
@@ -163,7 +164,7 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 1.8
+  m_Height: 1.65
   m_Radius: 0.3
   m_SlopeLimit: 45
   m_StepOffset: 0.3
