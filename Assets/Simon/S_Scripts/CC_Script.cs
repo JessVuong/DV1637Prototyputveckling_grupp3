@@ -1,7 +1,8 @@
 ﻿using TMPro;
 using UnityEngine;
 
-public class CharacterControllerScript : MonoBehaviour
+
+public class CC_Script : MonoBehaviour
 {
     [Tooltip("This value determines speed of character")]
     public float speed = 12f;
