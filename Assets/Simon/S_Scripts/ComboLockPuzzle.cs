@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -44,13 +45,11 @@ public class ComboLockPuzzle : MonoBehaviour
         }
     }
 
-    // INPUT (OPTIONAL EXIT)
-
     void Update()
     {
         if (!puzzleStarts) return;
 
-        // Right-click exits puzzle (can be replaced with UI later)
+        // Right-click exits puzzle (can be replaced later)
         if (Input.GetMouseButtonDown(1))
         {
             EndPuzzle();
@@ -59,13 +58,13 @@ public class ComboLockPuzzle : MonoBehaviour
 
     // UI BUTTON CONTROLS
 
-    // Rotate cylinder upward (next letter)
+    // Rotate cylinder upward
     public void OnCylinderUp(int index)
     {
         RotateCylinder(index, +1);
     }
 
-    // Rotate cylinder downward (previous letter)
+    // Rotate cylinder downward
     public void OnCylinderDown(int index)
     {
         RotateCylinder(index, -1);
@@ -83,10 +82,16 @@ public class ComboLockPuzzle : MonoBehaviour
             new Vector3(cylinderSteps[index] * rotationStep, 0f, 0f);
     }
 
-    // Get current letter for a cylinder (useful for solving logic)
+    // Get current letter for a cylinder
     public string GetCylinderLetter(int index)
     {
         return letters[cylinderSteps[index]];
+    }
+
+    public void CheckCode()
+    {
+        string currentCode = GetCylinderLetter(0) + GetCylinderLetter(1) + GetCylinderLetter(2) + GetCylinderLetter(3) + GetCylinderLetter(4);
+        Debug.Log(currentCode);
     }
 
     // PUZZLE CONTROL
