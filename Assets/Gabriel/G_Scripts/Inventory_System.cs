@@ -4,20 +4,25 @@ using System.Collections.Generic;
 
 public class Inventory_System : MonoBehaviour
 {
-    public string[,] inventory = {  
-                                    {"Key_cell"     ,   "0" },
-                                    {"Paper_pieces" ,   "0" },
-                                    {"Key_armory"   ,   "0" },
-                                    {"Hammer"       ,   "0" },
-                                    {"Gunpowder"    ,   "0" },
-                                    {"Cannonball"   ,   "0" },
-                                    {"Fuse"         ,   "0" }
-                                 };
+    public HashSet<Inv_ItemType> collectedItems = new HashSet<Inv_ItemType>();
 
-    public string[,] tools =     {  
-                                    {"Torch"        ,   "0"},
-                                    {"Rope"         ,   "0"}
-                                 };
+    public int Paper_Pieces = 0;
+    public int maxPaper_Pieces = 5;
+
+    public bool HasItem(Inv_ItemType item)
+    {
+        return collectedItems.Contains(item);
+    }
+
+    public void CollectItem(Inv_ItemType item)
+    {
+        collectedItems.Add(item);
+    }
+
+    public void AddPaper_Pieces()
+    {
+        Paper_Pieces++;
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

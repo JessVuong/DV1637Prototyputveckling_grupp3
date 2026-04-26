@@ -3,6 +3,9 @@ using UnityEngine.UI;
 
 public class Raycast_System : MonoBehaviour
 {
+    // OUTDATED! DO NOT USE!
+
+
     // String "toolTip" is to be used as the string for the HUD tooltip the player gets when hovering over an object
         public string toolTip;
     
