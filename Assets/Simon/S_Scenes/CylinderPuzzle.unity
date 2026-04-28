@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 147357417}
   m_Layer: 0
   m_Name: LockCloseUpCamera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -304,6 +304,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &460124029 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6731801877536910414, guid: a88dc9ec67def5e448c309f6fd99ccf6, type: 3}
+  m_PrefabInstance: {fileID: 1746486085}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &471052471
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -365,6 +370,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a88dc9ec67def5e448c309f6fd99ccf6, type: 3}
+--- !u!1 &471052472 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6731801877536910414, guid: a88dc9ec67def5e448c309f6fd99ccf6, type: 3}
+  m_PrefabInstance: {fileID: 471052471}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &471052473 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6208206075562653428, guid: a88dc9ec67def5e448c309f6fd99ccf6, type: 3}
@@ -431,6 +441,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8298bff192a449543a62526d50a30465, type: 3}
+--- !u!114 &482852110 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5199881254769939664, guid: 8298bff192a449543a62526d50a30465, type: 3}
+  m_PrefabInstance: {fileID: 482852109}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a02483d5708c0b04e8b954be13e5d08d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterControllerScript
 --- !u!1 &595345997
 GameObject:
   m_ObjectHideFlags: 0
@@ -769,6 +790,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0392d9a29e8f684ab6ad6f8567a720a, type: 3}
+--- !u!1 &759568664 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7931866030109176192, guid: f0392d9a29e8f684ab6ad6f8567a720a, type: 3}
+  m_PrefabInstance: {fileID: 759568663}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1291431492
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,15 +842,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bba00f92fb3f11847a41db2adc3e1efd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ComboLockPuzzle
-  Answer: 
   PuzzleSolved:
     m_PersistentCalls:
       m_Calls: []
-  interactiveLock: {fileID: 0}
-  puzzleLock: {fileID: 0}
-  closeUpCamera: {fileID: 0}
-  cc: {fileID: 0}
-  UIPanel: {fileID: 0}
+  interactiveLock: {fileID: 471052472}
+  puzzleLock: {fileID: 460124029}
+  closeUpCamera: {fileID: 147357416}
+  cc: {fileID: 482852110}
+  UIPanel: {fileID: 759568664}
   cylinders:
   - {fileID: 1746486091}
   - {fileID: 1746486090}
