@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &509213726745310897
+--- !u!1 &3478736833741011658
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 943774790135503620}
-  - component: {fileID: 6222012586494557887}
-  - component: {fileID: 2046732076252577161}
-  - component: {fileID: 6112507735506197755}
-  - component: {fileID: 8580295412885248511}
-  - component: {fileID: 3263663367332299767}
+  - component: {fileID: 2944631995719625523}
+  - component: {fileID: 7240346590326318067}
+  - component: {fileID: 2628735340016227538}
+  - component: {fileID: 423812029030483583}
+  - component: {fileID: 4253903672290970601}
+  - component: {fileID: 2047687103617652938}
   m_Layer: 6
-  m_Name: Door
-  m_TagString: OBJ_Interact
+  m_Name: Door_O
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &943774790135503620
+--- !u!4 &2944631995719625523
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 509213726745310897}
+  m_GameObject: {fileID: 3478736833741011658}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 6.653267, y: -0.008693273, z: 17.09432}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &6222012586494557887
+--- !u!33 &7240346590326318067
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 509213726745310897}
+  m_GameObject: {fileID: 3478736833741011658}
   m_Mesh: {fileID: 2619086233303812490, guid: 4a039804cf9e9434ea9b8308cc8af676, type: 3}
---- !u!23 &2046732076252577161
+--- !u!23 &2628735340016227538
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 509213726745310897}
+  m_GameObject: {fileID: 3478736833741011658}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -94,13 +94,13 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6112507735506197755
+--- !u!65 &423812029030483583
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 509213726745310897}
+  m_GameObject: {fileID: 3478736833741011658}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -115,14 +115,28 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.01193508, y: 0.0017957026, z: 0.020195862}
   m_Center: {x: -0.00581935, y: -5.820765e-10, z: 0.0101848645}
---- !u!95 &8580295412885248511
+--- !u!114 &4253903672290970601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3478736833741011658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc6635cc357283d49b202a7a0c55fa61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Open_System
+  animator: {fileID: 2047687103617652938}
+  opened: 0
+--- !u!95 &2047687103617652938
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 509213726745310897}
+  m_GameObject: {fileID: 3478736833741011658}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: c032fda58148b914b9ed57909bf4808b, type: 2}
@@ -137,16 +151,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3263663367332299767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 509213726745310897}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc6635cc357283d49b202a7a0c55fa61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Open_System
-  Object: {fileID: 8580295412885248511}

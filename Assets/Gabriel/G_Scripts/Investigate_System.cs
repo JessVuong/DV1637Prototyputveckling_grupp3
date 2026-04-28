@@ -1,7 +1,17 @@
 using UnityEngine;
 
-public class Investigate_System : MonoBehaviour
+public class Investigate_System : MonoBehaviour, IInteractable
 {
+    public void Interact()
+    {
+        Investigate();
+    }
+
+    public string GetInteractionText()
+    {
+        return "Click to Investigate";
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -12,5 +22,14 @@ public class Investigate_System : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void Investigate()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("Hmm?...");
+        }
+
     }
 }
