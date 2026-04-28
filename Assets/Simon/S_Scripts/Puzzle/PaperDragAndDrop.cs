@@ -5,11 +5,12 @@ using UnityEngine;
 using UnityEngine.Events;
 
 public class Paper : MonoBehaviour
-{ //Most parts copied from ComboLockPuzzle
+{ 
 
     [Header("PUZZLE OBJECT REFERENCES")]
     [Tooltip("Interact Object")]
     [SerializeField] private GameObject interactiveBlock;
+    [SerializeField] private GameObject blockReplacement;
     [Tooltip("Puzzle Object")]
     [SerializeField] private GameObject PaperPile;
     [Tooltip("Virtual Camera")]
@@ -28,68 +29,71 @@ public class Paper : MonoBehaviour
 
     private Vector3 savedCamPos;
     private Quaternion savedCamRot;
-    private Camera mainCam;
+    [SerializeField] private Camera mainCam;
     //because I had some issues I'm just making sure the cameras work
 
+
+    private float dragDepth; // Distance from camera to object at pickup time (locks depth so it doesn't drift)
+    private Vector3 dragOffset; // Difference between object pivot and exact click point (prevents snapping to center)
 
     void Start()
     {
         mainCam = Camera.main;
-        EndPuzzle();
+        //EndPuzzle();
+        StartPuzzle();
     }
 
-    void Update()
-    {
-        if (!puzzleStarts) return;
 
+
+    void Update() { 
+        if (!puzzleStarts) return; 
+        
         // Right-click exits puzzle (can be replaced later)
-        if (Input.GetMouseButtonDown(1))
-        {
-            EndPuzzle();
+        if (Input.GetMouseButtonDown(1)) 
+        { 
+            EndPuzzle(); 
         }
-
-        // PICKUP
+        // PICK UP
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit = Cast();
-            if (hit.collider != null && hit.collider.CompareTag("drag"))
+
+            if (hit.collider != null && hit.collider.CompareTag("Paper_Drag"))
             {
                 selectedPaper = hit.collider.gameObject;
                 Cursor.visible = false;
+
+                dragDepth = mainCam.WorldToScreenPoint(selectedPaper.transform.position).z;
+
+                Vector3 mousePoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, dragDepth);
+                Vector3 worldMousePoint = mainCam.ScreenToWorldPoint(mousePoint);
+
+                dragOffset = selectedPaper.transform.position - worldMousePoint;
             }
         }
-
         // DRAG
         if (Input.GetMouseButton(0) && selectedPaper != null)
         {
-            Vector3 position = new Vector3(Input.mousePosition.x, Input.mousePosition.y,Camera.main.WorldToScreenPoint(selectedPaper.transform.position).z);
-            Vector3 worldposition = Camera.main.ScreenToWorldPoint(position);
-            selectedPaper.transform.position = new Vector3(worldposition.x, 1.25f, worldposition.z);
-        }
+            Vector3 mousePoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, dragDepth);
+            Vector3 worldMousePoint = mainCam.ScreenToWorldPoint(mousePoint);
+            Vector3 targetPosition = worldMousePoint + dragOffset;
 
+            selectedPaper.transform.position = new Vector3(targetPosition.x, .95f, targetPosition.z);
+        }
         // DROP
         if (Input.GetMouseButtonUp(0) && selectedPaper != null)
         {
-            Vector3 position = new Vector3(Input.mousePosition.x, Input.mousePosition.y,Camera.main.WorldToScreenPoint(selectedPaper.transform.position).z);
-            Vector3 worldposition = Camera.main.ScreenToWorldPoint(position);
-            selectedPaper.transform.position = new Vector3(worldposition.x, 1.153f, worldposition.z);
+            Vector3 mousePoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, dragDepth);
+            Vector3 worldMousePoint = mainCam.ScreenToWorldPoint(mousePoint);
+            Vector3 targetPosition = worldMousePoint + dragOffset;
+
+            selectedPaper.transform.position = new Vector3(targetPosition.x, .92f, targetPosition.z);
+
             selectedPaper = null;
             Cursor.visible = true;
         }
     }
 
-
-    public IEnumerator CompletedGame() 
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-
-        yield return new WaitForSeconds(1.0f);
-
-        interactiveBlock.SetActive(true);
-        EndPuzzle();
-        this.gameObject.SetActive(false);
-
-    }
     // PUZZLE CONTROL
 
     public void StartPuzzle()
@@ -113,36 +117,44 @@ public class Paper : MonoBehaviour
 
         interactiveBlock.SetActive(false);
         PaperPile.SetActive(true);
+        blockReplacement.SetActive(true);
 
         puzzleStarts = true;
+
+        mainCam.gameObject.SetActive(false);
+        mainCam.gameObject.SetActive(true);
+
+
+
     }
 
     public void EndPuzzle()
     {
         Cursor.lockState = CursorLockMode.Locked;
 
+        closeUpCamera.SetActive(false);
         cc.enabled = true;
 
         interactiveBlock.SetActive(true);
 
         // restoring camera state
         mainCam.transform.SetPositionAndRotation(savedCamPos, savedCamRot);
+        mainCam.GetComponent<Camera>().fieldOfView = 60f;
 
         puzzleStarts = false;
     }
 
     private RaycastHit Cast()
     {
-        Vector3 screenMousePos_F = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.farClipPlane);
-        Vector3 screenMousePos_N = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane);
 
-        Vector3 worldMousePos_F = Camera.main.ScreenToWorldPoint(screenMousePos_F);
-        Vector3 worldMousePos_N = Camera.main.ScreenToWorldPoint(screenMousePos_N);
+        Camera cam = Camera.main;
 
-        RaycastHit hit;
+        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
 
-        Physics.Raycast(worldMousePos_N, worldMousePos_F, out hit);
+        Debug.DrawRay(ray.origin, ray.direction * 10f, Color.red, 1f);
 
+        Physics.Raycast(ray, out RaycastHit hit);
+        
         return hit;
     }
 

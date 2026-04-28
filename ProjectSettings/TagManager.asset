@@ -7,7 +7,7 @@ TagManager:
   - OBJ_Investigate
   - OBJ_Pickup
   - OBJ_Ignite
-  - OBJ_Open
+  - Paper_Drag
   layers:
   - Default
   - TransparentFX

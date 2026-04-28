@@ -31,9 +31,9 @@ public class ComboLockPuzzle : MonoBehaviour
     [Tooltip("Input for each of the Cylinder Disks")]
     [SerializeField] private GameObject[] cylinders;
     // Letter mapping for each step index
-    private readonly string[] letters = { "L", "W", "A", "TH", "E" }; //L[0], W[1], A[2], TH[3], E[4]
+    private readonly string[] letters = { "E", "L", "W", "A", "TH" }; //E[0], L[1], W[2], A[3], TH[4]
 
-    [Tooltip("Starting Position for disks \n L [0], W [1], A [2], TH [3], E [4]")]
+    [Tooltip("Starting Position for disks \n E [0], L [1], W [2], A [3], TH [4]")]
     [SerializeField] private int[] startingSteps; // Starting index for each cylinder
 
     private int[] cylinderSteps;
@@ -44,7 +44,7 @@ public class ComboLockPuzzle : MonoBehaviour
 
     private Vector3 savedCamPos;
     private Quaternion savedCamRot;
-    private Camera mainCam;
+    [SerializeField] private Camera mainCam;
     //because I had some issues I'm just making sure the cameras work
 
     void Start()
@@ -53,13 +53,16 @@ public class ComboLockPuzzle : MonoBehaviour
 
         for (int i = 0; i < cylinders.Length; i++)
         {
-            int start = (startingSteps != null && i < startingSteps.Length)
-                ? startingSteps[i]
-                : 0;
+            int start = (startingSteps != null && i < startingSteps.Length)? startingSteps[i]: 0;
 
             cylinderSteps[i] = start;
+
+            // Apply starting visual rotation
+            cylinders[i].transform.localEulerAngles =
+                new Vector3(start * rotationStep, 0f, 0f);
         }
         EndPuzzle();
+        //StartPuzzle(); //Only for testing prior to Interact
     }
 
     void Update()
@@ -78,13 +81,13 @@ public class ComboLockPuzzle : MonoBehaviour
     // Rotate cylinder upward
     public void OnCylinderUp(int index)
     {
-        RotateCylinder(index, +1);
+        RotateCylinder(index, -1); //Changes direction of rotation
     }
 
     // Rotate cylinder downward
     public void OnCylinderDown(int index)
     {
-        RotateCylinder(index, -1);
+        RotateCylinder(index, +1);
     }
 
     // Core rotation logic for any cylinder
@@ -95,8 +98,7 @@ public class ComboLockPuzzle : MonoBehaviour
         cylinderSteps[index] = (cylinderSteps[index] + direction + 5) % 5;
 
         // Apply rotation in world space
-        cylinders[index].transform.localEulerAngles =
-            new Vector3(cylinderSteps[index] * rotationStep, 0f, 0f);
+        cylinders[index].transform.localEulerAngles = new Vector3(cylinderSteps[index] * rotationStep, 0f, 0f);
         
         CheckCode();
     }
@@ -115,11 +117,11 @@ public class ComboLockPuzzle : MonoBehaviour
         if (currentCode == Answer)
         {
             StartCoroutine("CompletedGame");
-            Debug.Log("Code is Correct");
+            Debug.Log("Debug.Log: Code is Correct");
         }
         else
         {
-            Debug.Log("Incorrect Code");
+            Debug.Log("Debug.Log: Incorrect Code: " + GetCylinderLetter(0) + GetCylinderLetter(1) + GetCylinderLetter(2) + GetCylinderLetter(3) + GetCylinderLetter(4));
         }
 
 
@@ -173,6 +175,7 @@ public class ComboLockPuzzle : MonoBehaviour
 
         // restoring camera state
         mainCam.transform.SetPositionAndRotation(savedCamPos, savedCamRot);
+        mainCam.GetComponent<Camera>().fieldOfView = 60f;
 
         puzzleStarts = false;
     }
