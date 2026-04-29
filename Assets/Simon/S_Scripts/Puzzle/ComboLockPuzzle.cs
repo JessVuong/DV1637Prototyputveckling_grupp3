@@ -4,7 +4,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ComboLockPuzzle : MonoBehaviour
+public class ComboLockPuzzle : MonoBehaviour, IInteractable
 {
    
     [Header("PUZZLE DATA")]
@@ -47,6 +47,15 @@ public class ComboLockPuzzle : MonoBehaviour
     [SerializeField] private Camera mainCam;
     //because I had some issues I'm just making sure the cameras work
 
+    public void Interact()
+    {
+        StartPuzzle();
+    }
+
+    public string GetInteractionText()
+    {
+        return "Click to start puzzle...";
+    }
     void Start()
     {
         cylinderSteps = new int[cylinders.Length];
@@ -61,7 +70,6 @@ public class ComboLockPuzzle : MonoBehaviour
             cylinders[i].transform.localEulerAngles =
                 new Vector3(start * rotationStep, 0f, 0f);
         }
-        EndPuzzle();
         //StartPuzzle(); //Only for testing prior to Interact
     }
 

@@ -4,13 +4,12 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Paper : MonoBehaviour
+public class Paper : MonoBehaviour, IInteractable
 { 
 
     [Header("PUZZLE OBJECT REFERENCES")]
     [Tooltip("Interact Object")]
-    [SerializeField] private GameObject interactiveBlock;
-    [SerializeField] private GameObject blockReplacement;
+    [SerializeField] private GameObject PaperPuzzleMain;
     [Tooltip("Puzzle Object")]
     [SerializeField] private GameObject PaperPile;
     [Tooltip("Virtual Camera")]
@@ -38,10 +37,17 @@ public class Paper : MonoBehaviour
     void Start()
     {
         mainCam = Camera.main;
-        //EndPuzzle();
+    }
+
+    public void Interact()
+    {
         StartPuzzle();
     }
 
+    public string GetInteractionText()
+    {
+        return "Click to start puzzle...";
+    }
 
 
     void Update() { 
@@ -114,9 +120,8 @@ public class Paper : MonoBehaviour
         closeUpCamera.SetActive(true);
         cc.enabled = false;
 
-        interactiveBlock.SetActive(false);
+        PaperPuzzleMain.GetComponent<BoxCollider>().enabled = false;
         PaperPile.SetActive(true);
-        blockReplacement.SetActive(true);
 
         puzzleStarts = true;
 
@@ -134,7 +139,7 @@ public class Paper : MonoBehaviour
         closeUpCamera.SetActive(false);
         cc.enabled = true;
 
-        interactiveBlock.SetActive(true);
+        PaperPuzzleMain.GetComponent<BoxCollider>().enabled = true;
 
         // restoring camera state
         mainCam.transform.SetPositionAndRotation(savedCamPos, savedCamRot);
