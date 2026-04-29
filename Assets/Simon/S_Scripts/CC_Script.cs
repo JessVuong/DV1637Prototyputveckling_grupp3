@@ -1,12 +1,18 @@
 ﻿using TMPro;
 using UnityEngine;
 
-public class CharacterControllerScript : MonoBehaviour
+
+public class CC_Script : MonoBehaviour
 {
     [Tooltip("This value determines speed of character")]
     public float speed = 12f;
-    CharacterController cc;
 
+    [Tooltip("How quickly the player slows down (friction)")]
+    public float friction = 100f;
+
+    private Vector3 velocity; // stores current movement
+
+    CharacterController cc;
 
     private void Start()
     {
@@ -18,36 +24,27 @@ public class CharacterControllerScript : MonoBehaviour
 
         float xAxis = Input.GetAxis("Horizontal"); 
         float zAxis = Input.GetAxis("Vertical");    // Calls on Unity's Player Input. Creates a movement vector on the horizontal (X) and vertical (Z) axes
-        Vector3 move = new Vector3(xAxis, 0, zAxis);
+        Vector3 input = new Vector3(xAxis, 0, zAxis);
 
-        if (move.magnitude > 1f)
+        if (input.magnitude > 1f) 
+            input = input.normalized;
+        
+        input = transform.TransformDirection(input);
+
+        // velocity based on input
+        Vector3 targetVelocity = input * speed;
+        velocity.x = targetVelocity.x;
+        velocity.z = targetVelocity.z;
+
+        if (input.magnitude < 0.1f)
         {
-            move = move.normalized; // Normalizes speed on diagonal. So speed on (1,1) = √2 which is > 1 becomes same as speed on (1,0) = 1
+            // Apply friction (slow down when no input)
+            velocity = Vector3.Lerp(velocity, Vector3.zero, friction * Time.deltaTime);
         }
 
-        move *= speed * Time.deltaTime; // Deltatime makes movement consistent regardless of framerate
+        // Apply gravity
+        velocity.y = -9.82f;
 
-        move = transform.TransformDirection(move);
-
-        move.y = -9.82f * Time.deltaTime; // Simple gravity via a constant force down on y axis
-
-
-        cc.Move(move);
+        cc.Move(velocity * Time.deltaTime);
     }
-
-
-    /* // Interact function that can be moved out if necessary
-    void Interact() 
-    {
-
-            Ray ray = Camera.main.ViewportPointToRay(new Vector3 (0.5f, 0.5f, 0.0f));
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit)) {
-                if (hit.collider.gameObject.CompareTag("Interactable"))
-                {
-                 
-                }
-            }
-
-    }*/
 }
