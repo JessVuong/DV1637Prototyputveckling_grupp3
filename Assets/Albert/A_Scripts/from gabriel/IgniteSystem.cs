@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class IgniteSystem : MonoBehaviour, IInteractable
 {
+    public Inventory_System inventory;
+
     public void Interact()
     {
         Ignite();

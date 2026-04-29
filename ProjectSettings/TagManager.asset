@@ -4,10 +4,17 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - OBJ_Investigate
-  - OBJ_Pickup
-  - OBJ_Ignite
   - Paper_Drag
+  - OBJ_Interact
+  - Start_Torch
+  - Paper_Pickup
+  - Hammer_Pickup
+  - Gunpowder_Pickup
+  - Cannonball_Pickup
+  - Fuse_Pickup
+  - Rope_Pickup
+  - CellKey_Pickup
+  - ArmoryKey_Pickup
   layers:
   - Default
   - TransparentFX
