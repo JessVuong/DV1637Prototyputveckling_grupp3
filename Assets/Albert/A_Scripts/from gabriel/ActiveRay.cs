@@ -3,7 +3,7 @@ using UnityEngine;
 public class ActiveRay : MonoBehaviour
 {
     // Max distance for the raycast
-    float maxDist = 100f;
+    float maxDist = 1.5f;
 
     // Variables to track the current and last interactable being looked at, the current is used for interactions and the last WILL BE used for showing hints on the UI
     private IInteractable currentInteractable;
