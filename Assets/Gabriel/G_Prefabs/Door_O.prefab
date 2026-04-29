@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 7240346590326318067}
   - component: {fileID: 2628735340016227538}
   - component: {fileID: 423812029030483583}
+  - component: {fileID: 4253903672290970601}
   - component: {fileID: 2047687103617652938}
-  - component: {fileID: 7427068400539499287}
   m_Layer: 6
   m_Name: Door_O
   m_TagString: Untagged
@@ -115,6 +115,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.01193508, y: 0.0017957026, z: 0.020195862}
   m_Center: {x: -0.00581935, y: -5.820765e-10, z: 0.0101848645}
+--- !u!114 &4253903672290970601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3478736833741011658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc6635cc357283d49b202a7a0c55fa61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Open_System
+  animator: {fileID: 2047687103617652938}
+  opened: 0
 --- !u!95 &2047687103617652938
 Animator:
   serializedVersion: 7
@@ -137,18 +151,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &7427068400539499287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3478736833741011658}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0fc6319727ed7a4eb6e917ae2bd6996, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::OpenSystem
-  animator: {fileID: 2047687103617652938}
-  inventory: {fileID: 0}
-  opened: 0
