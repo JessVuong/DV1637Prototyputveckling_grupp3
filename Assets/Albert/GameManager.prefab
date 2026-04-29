@@ -47,6 +47,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManagerScript
   timer: {fileID: 2363566590838810908}
   pauseMenu: {fileID: 0}
+  hud: {fileID: 0}
+  defeatScreen: {fileID: 0}
+  victoryScreen: {fileID: 0}
   gameIsPaused: 0
 --- !u!1 &4338431393903901556
 GameObject:

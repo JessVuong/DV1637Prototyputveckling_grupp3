@@ -765,26 +765,6 @@ PrefabInstance:
       propertyPath: mainCam
       value: 
       objectReference: {fileID: 1337321293}
-    - target: {fileID: 496599031727522816, guid: 8016f766d7c802a4f91fdb819127c15f, type: 3}
-      propertyPath: 'startingSteps.Array.data[0]'
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 496599031727522816, guid: 8016f766d7c802a4f91fdb819127c15f, type: 3}
-      propertyPath: 'startingSteps.Array.data[1]'
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 496599031727522816, guid: 8016f766d7c802a4f91fdb819127c15f, type: 3}
-      propertyPath: 'startingSteps.Array.data[2]'
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 496599031727522816, guid: 8016f766d7c802a4f91fdb819127c15f, type: 3}
-      propertyPath: 'startingSteps.Array.data[3]'
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 496599031727522816, guid: 8016f766d7c802a4f91fdb819127c15f, type: 3}
-      propertyPath: 'startingSteps.Array.data[4]'
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5199080409178971425, guid: 8016f766d7c802a4f91fdb819127c15f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

@@ -134,7 +134,7 @@ public class ComboLockPuzzle : MonoBehaviour
         // ----------------------------
         // play OpenLock animation here
         // ----------------------------
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(2.0f);
 
         interactiveLock.SetActive(true);
         EndPuzzle();
