@@ -42,27 +42,27 @@ public class PickupSystem : MonoBehaviour, IInteractable
                 break;
             case "ArmoryKey_Pickup":
                 inventory.CollectItem(Inv_ItemType.Key);
-                hud.transform.GetChild(2).GetChild(3).gameObject.SetActive(true);
+                hud.transform.GetChild(2).GetChild(4).gameObject.SetActive(true);
                 Destroy(gameObject);
                 break;
             case "Hammer_Pickup":
                 inventory.CollectItem(Inv_ItemType.Hammer);
-                hud.transform.GetChild(2).GetChild(4).gameObject.SetActive(true);
+                hud.transform.GetChild(2).GetChild(5).gameObject.SetActive(true);
                 Destroy(gameObject);
                 break;
             case "Gunpowder_Pickup":
                 inventory.CollectItem(Inv_ItemType.Gunpowder);
-                hud.transform.GetChild(2).GetChild(5).gameObject.SetActive(true);
+                hud.transform.GetChild(2).GetChild(6).gameObject.SetActive(true);
                 Destroy(gameObject);
                 break;
             case "Cannonball_Pickup":
                 inventory.CollectItem(Inv_ItemType.Cannonball);
-                hud.transform.GetChild(2).GetChild(6).gameObject.SetActive(true);
+                hud.transform.GetChild(2).GetChild(7).gameObject.SetActive(true);
                 Destroy(gameObject);
                 break;
             case "Fuse_Pickup":
                 inventory.CollectItem(Inv_ItemType.Fuse);
-                hud.transform.GetChild(2).GetChild(7).gameObject.SetActive(true);
+                hud.transform.GetChild(2).GetChild(8).gameObject.SetActive(true);
                 Destroy(gameObject);
                 break;
         }

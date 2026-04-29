@@ -6,7 +6,8 @@ public class IgniteSystem : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        Ignite();
+        if (inventory.HasItem(Inv_ItemType.Torch))
+            Ignite();
     }
 
     public string GetInteractionText()
@@ -16,6 +17,6 @@ public class IgniteSystem : MonoBehaviour, IInteractable
 
     private void Ignite()
     {
-        Debug.Log("Fire!");
+        Destroy(gameObject);
     }
 }

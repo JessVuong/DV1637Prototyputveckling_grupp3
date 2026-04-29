@@ -12,7 +12,7 @@ public class OpenSystem : MonoBehaviour, IInteractable
         if (!opened && inventory.HasItem(Inv_ItemType.Key))
         {
             Open();
-            inventory.RemoveItem(Inv_ItemType.Key);
+            // PUT BACK AFTER DEMO inventory.RemoveItem(Inv_ItemType.Key);
         }
     }
 
@@ -22,7 +22,7 @@ public class OpenSystem : MonoBehaviour, IInteractable
     }
 
     // Changes the animation state in the animator
-    private void Open()
+    public void Open()
     {
         animator.SetBool("IsOpen", true);
         opened = true;
