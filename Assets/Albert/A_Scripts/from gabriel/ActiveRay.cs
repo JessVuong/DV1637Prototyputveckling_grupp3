@@ -39,7 +39,7 @@ public class ActiveRay : MonoBehaviour
 
             if (currentInteractable != null)
             {
-                Debug.Log(currentInteractable.GetInteractionText());
+                //Debug.Log(currentInteractable.GetInteractionText());
             }
         }
         else

@@ -3,12 +3,17 @@ using UnityEngine;
 public class OpenSystem : MonoBehaviour, IInteractable
 {
     public Animator animator;
+    public Inventory_System inventory;
 
     public bool opened = false;
 
     public void Interact()
     {
-        Open();
+        if (!opened && inventory.HasItem(Inv_ItemType.Key))
+        {
+            Open();
+            inventory.RemoveItem(Inv_ItemType.Key);
+        }
     }
 
     public string GetInteractionText()

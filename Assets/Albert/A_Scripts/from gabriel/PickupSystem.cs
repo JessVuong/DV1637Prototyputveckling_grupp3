@@ -14,10 +14,6 @@ public class PickupSystem : MonoBehaviour, IInteractable
 
     private void PickUp()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Debug.Log("Oh! Shiny!");
-        }
-
+        Debug.Log("Oh! Shiny!");
     }
 }
