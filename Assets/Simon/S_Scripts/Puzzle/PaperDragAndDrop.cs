@@ -30,7 +30,6 @@ public class Paper : MonoBehaviour
     private Vector3 savedCamPos;
     private Quaternion savedCamRot;
     [SerializeField] private Camera mainCam;
-    //because I had some issues I'm just making sure the cameras work
 
 
     private float dragDepth; // Distance from camera to object at pickup time (locks depth so it doesn't drift)
@@ -121,7 +120,7 @@ public class Paper : MonoBehaviour
 
         puzzleStarts = true;
 
-        mainCam.gameObject.SetActive(false);
+        mainCam.gameObject.SetActive(false); //Reloads Camera possible 1 frame stutter
         mainCam.gameObject.SetActive(true);
 
 
@@ -150,8 +149,6 @@ public class Paper : MonoBehaviour
         Camera cam = Camera.main;
 
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-
-        Debug.DrawRay(ray.origin, ray.direction * 10f, Color.red, 1f);
 
         Physics.Raycast(ray, out RaycastHit hit);
         
