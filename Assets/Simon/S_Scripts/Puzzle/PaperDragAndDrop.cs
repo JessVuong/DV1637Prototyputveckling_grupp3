@@ -20,6 +20,7 @@ public class Paper : MonoBehaviour, IInteractable
     private bool puzzleStarts;
     private GameObject selectedPaper;
 
+    public GameObject rmbText;
     /*
     [SerializeField] private Inventory_System inventory;
     private int requiredPaperPieces = 5;
@@ -34,10 +35,7 @@ public class Paper : MonoBehaviour, IInteractable
     private float dragDepth; // Distance from camera to object at pickup time (locks depth so it doesn't drift)
     private Vector3 dragOffset; // Difference between object pivot and exact click point (prevents snapping to center)
 
-    void Start()
-    {
-        mainCam = Camera.main;
-    }
+
 
     public void Interact()
     {
@@ -83,7 +81,7 @@ public class Paper : MonoBehaviour, IInteractable
             Vector3 worldMousePoint = mainCam.ScreenToWorldPoint(mousePoint);
             Vector3 targetPosition = worldMousePoint + dragOffset;
 
-            selectedPaper.transform.position = new Vector3(targetPosition.x, .95f, targetPosition.z);
+            selectedPaper.transform.position = new Vector3(targetPosition.x, .81f, targetPosition.z);
         }
         // DROP
         if (Input.GetMouseButtonUp(0) && selectedPaper != null)
@@ -92,7 +90,7 @@ public class Paper : MonoBehaviour, IInteractable
             Vector3 worldMousePoint = mainCam.ScreenToWorldPoint(mousePoint);
             Vector3 targetPosition = worldMousePoint + dragOffset;
 
-            selectedPaper.transform.position = new Vector3(targetPosition.x, .92f, targetPosition.z);
+            selectedPaper.transform.position = new Vector3(targetPosition.x, .78f, targetPosition.z);
 
             selectedPaper = null;
             Cursor.visible = true;
@@ -110,9 +108,11 @@ public class Paper : MonoBehaviour, IInteractable
             return;
         }
         */
+        rmbText.SetActive(true);
 
-        Cursor.lockState = CursorLockMode.None;
         
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.Confined; // THIS IS PROBABLY THR CAUSE OF THE BORDER
         // saving camera state
         savedCamPos = mainCam.transform.position;
         savedCamRot = mainCam.transform.rotation;
@@ -131,9 +131,20 @@ public class Paper : MonoBehaviour, IInteractable
 
 
     }
+    public IEnumerator WaitToExit() //using IE to cause a small wait . for camera
+    {
 
+
+        yield return new WaitForSeconds(.2f);
+
+
+    }
     public void EndPuzzle()
     {
+        rmbText.SetActive(false);
+
+        StartCoroutine("WaitToExit");
+
         Cursor.lockState = CursorLockMode.Locked;
 
         closeUpCamera.SetActive(false);
