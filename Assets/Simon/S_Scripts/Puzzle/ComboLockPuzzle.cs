@@ -1,6 +1,7 @@
 using System;
-using System.Reflection;
 using System.Collections;
+using System.Reflection;
+using System.Xml;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,18 +10,18 @@ public class ComboLockPuzzle : MonoBehaviour, IInteractable
    
     [Header("PUZZLE DATA")]
     private string Answer = "WEALTH";
-    [Tooltip("UnityEvent called on puzzle being solved")]
-    [SerializeField] private UnityEvent PuzzleSolved;
 
     [Header("PUZZLE OBJECT REFERENCES")]
-    [Tooltip("Interact Object")]
-    [SerializeField] private GameObject interactiveLock;
-    [Tooltip("Puzzle Object")]
-    [SerializeField] private GameObject puzzleLock;
     [Tooltip("Virtual Camera")]
     [SerializeField] private GameObject closeUpCamera;
     [Tooltip("Object with CharacterController script")]
     [SerializeField] private CC_Script cc;
+
+    [Tooltip("Virtual Camera on PlayerPrefab")]
+    [SerializeField] private GameObject gameplayCamera;
+
+    [SerializeField] private Camera mainCam;
+
     [Tooltip("Puzzle Overlay UI Panel")]
     [SerializeField] private GameObject UIPanel;
 
@@ -41,11 +42,7 @@ public class ComboLockPuzzle : MonoBehaviour, IInteractable
     // Each step represents 72 degrees (360/5=72)
     private float rotationStep = 72f;
 
-
-    private Vector3 savedCamPos;
-    private Quaternion savedCamRot;
-    [SerializeField] private Camera mainCam;
-    //because I had some issues I'm just making sure the cameras work
+    public GameObject rmbText;
 
     public void Interact()
     {
@@ -136,17 +133,16 @@ public class ComboLockPuzzle : MonoBehaviour, IInteractable
     }
     public IEnumerator CompletedGame() //using IE to cause a small wait before showing results, unlock animation
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        
         UIPanel.SetActive(false);
-
+        EndPuzzle();
         // ----------------------------
         // play OpenLock animation here
         // ----------------------------
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(3.0f);
 
-        interactiveLock.SetActive(true);
-        EndPuzzle();
-        PuzzleSolved.Invoke();
+
+        
         this.gameObject.SetActive(false);
 
     }
@@ -154,36 +150,47 @@ public class ComboLockPuzzle : MonoBehaviour, IInteractable
 
     public void StartPuzzle()
     {
+        rmbText.SetActive(true);
+
         Cursor.lockState = CursorLockMode.None;
         UIPanel.SetActive(true);
 
-        // saving camera state
-        savedCamPos = mainCam.transform.position;
-        savedCamRot = mainCam.transform.rotation;
+        mainCam.gameObject.SetActive(false); //Reloads Camera possible 1 frame stutter
+        mainCam.gameObject.SetActive(true);
 
+        gameplayCamera.SetActive(false);
         closeUpCamera.SetActive(true);
         cc.enabled = false;
 
-        interactiveLock.SetActive(false);
-        puzzleLock.SetActive(true);
 
         puzzleStarts = true;
     }
+    public IEnumerator WaitToExit() //using IE to cause a small wait . for camera
+    {
+
+        
+        yield return new WaitForSeconds(.2f);
+
+
+    }
+    // PUZZLE CONTROL
 
     public void EndPuzzle()
     {
+        rmbText.SetActive(false);
+        StartCoroutine("WaitToExit");
+
         Cursor.lockState = CursorLockMode.Locked;
         UIPanel.SetActive(false);
 
+        
+
+        gameplayCamera.SetActive(true);
         closeUpCamera.SetActive(false);
         cc.enabled = true;
 
-        interactiveLock.SetActive(true);
-        puzzleLock.SetActive(false);
 
-        // restoring camera state
-        mainCam.transform.SetPositionAndRotation(savedCamPos, savedCamRot);
-        mainCam.GetComponent<Camera>().fieldOfView = 60f;
+        
 
         puzzleStarts = false;
     }

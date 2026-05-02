@@ -14,8 +14,11 @@ public class CameraController : MonoBehaviour
 
     private void Update()
     {
-        float mX = Input.GetAxis("Mouse X") * mSensitivity * Time.deltaTime; // Mouse movement is scaled by sensitivity and deltatime
-        float mY = Input.GetAxis("Mouse Y") * mSensitivity * Time.deltaTime;
+        float mX = Input.GetAxis("Mouse X"); 
+        float mY = Input.GetAxis("Mouse Y");
+
+        mX *= mSensitivity * Time.deltaTime; // Mouse movement is scaled by sensitivity and deltatime
+        mY *= mSensitivity * Time.deltaTime;
 
         xRot -= mY;
 
