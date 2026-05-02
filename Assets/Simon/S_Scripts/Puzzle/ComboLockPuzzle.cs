@@ -41,8 +41,14 @@ public class ComboLockPuzzle : MonoBehaviour, IInteractable
 
     // Each step represents 72 degrees (360/5=72)
     private float rotationStep = 72f;
-
+    
+    [Header("GRAPHICS")]
+    [Tooltip("UI RightClick Text")]
     public GameObject rmbText;
+    [Tooltip("LockAnimator")]
+    [SerializeField] private Animator LockAnim;
+    [Tooltip("ChestAnimator")]
+    [SerializeField] private Animator ChestAnim;
 
     public void Interact()
     {
@@ -136,13 +142,12 @@ public class ComboLockPuzzle : MonoBehaviour, IInteractable
         
         UIPanel.SetActive(false);
         EndPuzzle();
-        // ----------------------------
-        // play OpenLock animation here
-        // ----------------------------
-        yield return new WaitForSeconds(3.0f);
+        LockAnim.SetTrigger("t_LockOpen");
+        yield return new WaitForSeconds(.5f);
+        ChestAnim.SetTrigger("t_ChestOpen");
 
 
-        
+
         this.gameObject.SetActive(false);
 
     }
