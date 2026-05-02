@@ -143,12 +143,13 @@ public class ComboLockPuzzle : MonoBehaviour, IInteractable
         UIPanel.SetActive(false);
         EndPuzzle();
         LockAnim.SetTrigger("t_LockOpen");
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(1f);
+        this.gameObject.SetActive(false);
         ChestAnim.SetTrigger("t_ChestOpen");
 
 
 
-        this.gameObject.SetActive(false);
+        
 
     }
     // PUZZLE CONTROL
