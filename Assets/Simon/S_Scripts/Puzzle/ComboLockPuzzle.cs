@@ -16,6 +16,12 @@ public class ComboLockPuzzle : MonoBehaviour, IInteractable
     [SerializeField] private GameObject closeUpCamera;
     [Tooltip("Object with CharacterController script")]
     [SerializeField] private CC_Script cc;
+
+    [Tooltip("Virtual Camera on PlayerPrefab")]
+    [SerializeField] private GameObject gameplayCamera;
+
+    [SerializeField] private Camera mainCam;
+
     [Tooltip("Puzzle Overlay UI Panel")]
     [SerializeField] private GameObject UIPanel;
 
@@ -37,11 +43,6 @@ public class ComboLockPuzzle : MonoBehaviour, IInteractable
     private float rotationStep = 72f;
 
     public GameObject rmbText;
-
-    private Vector3 savedCamPos;
-    private Quaternion savedCamRot;
-    [SerializeField] private Camera mainCam;
-    //because I had some issues I'm just making sure the cameras work
 
     public void Interact()
     {
@@ -120,7 +121,6 @@ public class ComboLockPuzzle : MonoBehaviour, IInteractable
 
         if (currentCode == Answer)
         {
-            //Cursor.lockState = CursorLockMode.Locked;
             StartCoroutine("CompletedGame");
             Debug.Log("Debug.Log: Code is Correct");
         }
@@ -155,18 +155,15 @@ public class ComboLockPuzzle : MonoBehaviour, IInteractable
         Cursor.lockState = CursorLockMode.None;
         UIPanel.SetActive(true);
 
-        // saving camera state
-        savedCamPos = mainCam.transform.position;
-        savedCamRot = mainCam.transform.rotation;
+        mainCam.gameObject.SetActive(false); //Reloads Camera possible 1 frame stutter
+        mainCam.gameObject.SetActive(true);
 
+        gameplayCamera.SetActive(false);
         closeUpCamera.SetActive(true);
         cc.enabled = false;
 
 
         puzzleStarts = true;
-
-        //mainCam.gameObject.SetActive(false); //Reloads Camera possible 1 frame stutter
-        //mainCam.gameObject.SetActive(true);
     }
     public IEnumerator WaitToExit() //using IE to cause a small wait . for camera
     {
@@ -185,10 +182,10 @@ public class ComboLockPuzzle : MonoBehaviour, IInteractable
 
         Cursor.lockState = CursorLockMode.Locked;
         UIPanel.SetActive(false);
-        // restoring camera state
-        mainCam.transform.SetPositionAndRotation(savedCamPos, savedCamRot);
-        mainCam.GetComponent<Camera>().fieldOfView = 60f;
 
+        
+
+        gameplayCamera.SetActive(true);
         closeUpCamera.SetActive(false);
         cc.enabled = true;
 

@@ -21,14 +21,16 @@ public class Paper : MonoBehaviour, IInteractable
     private GameObject selectedPaper;
 
     public GameObject rmbText;
+
     /*
     [SerializeField] private Inventory_System inventory;
     private int requiredPaperPieces = 5;
      */
 
 
-    private Vector3 savedCamPos;
-    private Quaternion savedCamRot;
+    [Tooltip("Virtual Camera on PlayerPrefab")]
+    [SerializeField] private GameObject gameplayCamera;
+    
     [SerializeField] private Camera mainCam;
 
 
@@ -112,11 +114,12 @@ public class Paper : MonoBehaviour, IInteractable
 
         
         Cursor.lockState = CursorLockMode.None;
-        Cursor.lockState = CursorLockMode.Confined; // THIS IS PROBABLY THR CAUSE OF THE BORDER
-        // saving camera state
-        savedCamPos = mainCam.transform.position;
-        savedCamRot = mainCam.transform.rotation;
+        Cursor.lockState = CursorLockMode.Confined;
 
+        mainCam.gameObject.SetActive(false); //Reloads Camera possible 1 frame stutter
+        mainCam.gameObject.SetActive(true);
+
+        gameplayCamera.SetActive(false);
         closeUpCamera.SetActive(true);
         cc.enabled = false;
 
@@ -124,9 +127,6 @@ public class Paper : MonoBehaviour, IInteractable
         PaperPile.SetActive(true);
 
         puzzleStarts = true;
-
-        mainCam.gameObject.SetActive(false); //Reloads Camera possible 1 frame stutter
-        mainCam.gameObject.SetActive(true);
 
 
 
@@ -148,13 +148,10 @@ public class Paper : MonoBehaviour, IInteractable
         Cursor.lockState = CursorLockMode.Locked;
 
         closeUpCamera.SetActive(false);
+        gameplayCamera.SetActive(true);
         cc.enabled = true;
 
         PaperPuzzleMain.GetComponent<BoxCollider>().enabled = true;
-
-        // restoring camera state
-        mainCam.transform.SetPositionAndRotation(savedCamPos, savedCamRot);
-        mainCam.GetComponent<Camera>().fieldOfView = 60f;
 
         puzzleStarts = false;
     }
