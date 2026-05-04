@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 4385828729011241432}
   - component: {fileID: 681044812882578806}
   - component: {fileID: 8344911225080823531}
-  - component: {fileID: 5768862977089482650}
+  - component: {fileID: 6882477297133138197}
+  - component: {fileID: 6994104728829382187}
   m_Layer: 0
-  m_Name: Paper_ (2)
-  m_TagString: Untagged
+  m_Name: PickUp_Paper_ (2)
+  m_TagString: Paper_Pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,8 +92,8 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &5768862977089482650
-MeshCollider:
+--- !u!65 &6882477297133138197
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -109,7 +110,21 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 3
+  m_Size: {x: 2.7472022, y: 0.74824435, z: 10}
+  m_Center: {x: 0.3602507, y: -0.37412217, z: 0}
+--- !u!114 &6994104728829382187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5734521990586758728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65c646b81986f994c9b432e49583362f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupSystem
+  inventory: {fileID: 0}
+  playerTorch: {fileID: 0}
+  hud: {fileID: 0}
