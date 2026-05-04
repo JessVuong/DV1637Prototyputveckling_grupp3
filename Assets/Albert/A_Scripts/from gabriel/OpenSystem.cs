@@ -12,7 +12,7 @@ public class OpenSystem : MonoBehaviour, IInteractable
         if (!opened && inventory.HasItem(Inv_ItemType.Key))
         {
             Open();
-            inventory.RemoveItem(Inv_ItemType.Key);
+            //inventory.RemoveItem(Inv_ItemType.Key);
         }
     }
 

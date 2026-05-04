@@ -142,11 +142,11 @@ public class ComboLockPuzzle : MonoBehaviour, IInteractable
         
         UIPanel.SetActive(false);
         EndPuzzle();
+        this.gameObject.GetComponent<BoxCollider>().enabled = false;
         LockAnim.SetTrigger("t_LockOpen");
         yield return new WaitForSeconds(1f);
         this.gameObject.SetActive(false);
         ChestAnim.SetTrigger("t_ChestOpen");
-
 
 
         

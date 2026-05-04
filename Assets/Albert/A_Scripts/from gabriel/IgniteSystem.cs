@@ -16,6 +16,9 @@ public class IgniteSystem : MonoBehaviour, IInteractable
 
     private void Ignite()
     {
-        Debug.Log("Fire!");
+        if (inventory.HasItem(Inv_ItemType.Torch))
+        {
+            Destroy(gameObject);
+        }
     }
 }

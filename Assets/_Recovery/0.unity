@@ -1334,16 +1334,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Munitions_Door
       objectReference: {fileID: 0}
-    - target: {fileID: 4623141799003023933, guid: 9bd1580e73ccda74c8e4bf73a4133789, type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 745977180}
     - target: {fileID: 7427068400539499287, guid: 9bd1580e73ccda74c8e4bf73a4133789, type: 3}
       propertyPath: inventory
       value: 
       objectReference: {fileID: 745977180}
-    m_RemovedComponents:
-    - {fileID: 4253903672290970601, guid: 9bd1580e73ccda74c8e4bf73a4133789, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6208,10 +6203,6 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7749833170432446474, guid: 8298bff192a449543a62526d50a30465, type: 3}
-      propertyPath: maxDist
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10763,15 +10754,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cell_Door
       objectReference: {fileID: 0}
-    - target: {fileID: 4623141799003023933, guid: 9bd1580e73ccda74c8e4bf73a4133789, type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 745977180}
-    - target: {fileID: 9015783881113888224, guid: 9bd1580e73ccda74c8e4bf73a4133789, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 2135726582}
-    - target: {fileID: 9015783881113888224, guid: 9bd1580e73ccda74c8e4bf73a4133789, type: 3}
+    - target: {fileID: 7427068400539499287, guid: 9bd1580e73ccda74c8e4bf73a4133789, type: 3}
       propertyPath: inventory
       value: 
       objectReference: {fileID: 745977180}
@@ -11685,6 +11668,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2047687103617652938, guid: 9bd1580e73ccda74c8e4bf73a4133789, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 2355dd9a9c764e3459e279d3c9bc4a51, type: 2}
     - target: {fileID: 2944631995719625523, guid: 9bd1580e73ccda74c8e4bf73a4133789, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.232
@@ -11729,7 +11716,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Armory_Door
       objectReference: {fileID: 0}
-    - target: {fileID: 4623141799003023933, guid: 9bd1580e73ccda74c8e4bf73a4133789, type: 3}
+    - target: {fileID: 7427068400539499287, guid: 9bd1580e73ccda74c8e4bf73a4133789, type: 3}
       propertyPath: inventory
       value: 
       objectReference: {fileID: 745977180}
@@ -13159,16 +13146,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Treasury_Door
       objectReference: {fileID: 0}
-    - target: {fileID: 4623141799003023933, guid: 9bd1580e73ccda74c8e4bf73a4133789, type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 745977180}
     - target: {fileID: 7427068400539499287, guid: 9bd1580e73ccda74c8e4bf73a4133789, type: 3}
       propertyPath: inventory
       value: 
       objectReference: {fileID: 745977180}
-    m_RemovedComponents:
-    - {fileID: 4253903672290970601, guid: 9bd1580e73ccda74c8e4bf73a4133789, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -13242,11 +13224,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93c8691bcca5d6048aa4bc564e4786cd, type: 3}
---- !u!95 &2135726582 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 2047687103617652938, guid: 9bd1580e73ccda74c8e4bf73a4133789, type: 3}
-  m_PrefabInstance: {fileID: 1689605628}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &659301609877233142 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3575344461116711376, guid: 8764809a150835a43a67366d999d9da6, type: 3}
