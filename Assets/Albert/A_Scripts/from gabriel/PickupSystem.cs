@@ -38,32 +38,36 @@ public class PickupSystem : MonoBehaviour, IInteractable
                 break;
             case "Paper_Pickup":
                 inventory.AddPaper_Pieces();
+                hud.transform.GetChild(2).GetChild(3).GetChild(inventory.Paper_Pieces-1).gameObject.SetActive(true);
                 Destroy(gameObject);
                 break;
             case "ArmoryKey_Pickup":
                 inventory.CollectItem(Inv_ItemType.Key);
-                hud.transform.GetChild(2).GetChild(3).gameObject.SetActive(true);
+                hud.transform.GetChild(2).GetChild(4).gameObject.SetActive(true);
                 Destroy(gameObject);
                 break;
             case "Hammer_Pickup":
                 inventory.CollectItem(Inv_ItemType.Hammer);
-                hud.transform.GetChild(2).GetChild(4).gameObject.SetActive(true);
+                hud.transform.GetChild(2).GetChild(5).gameObject.SetActive(true);
                 Destroy(gameObject);
                 break;
             case "Gunpowder_Pickup":
                 inventory.CollectItem(Inv_ItemType.Gunpowder);
-                hud.transform.GetChild(2).GetChild(5).gameObject.SetActive(true);
+                hud.transform.GetChild(2).GetChild(6).gameObject.SetActive(true);
                 Destroy(gameObject);
                 break;
             case "Cannonball_Pickup":
                 inventory.CollectItem(Inv_ItemType.Cannonball);
-                hud.transform.GetChild(2).GetChild(6).gameObject.SetActive(true);
+                hud.transform.GetChild(2).GetChild(7).gameObject.SetActive(true);
                 Destroy(gameObject);
                 break;
             case "Fuse_Pickup":
-                inventory.CollectItem(Inv_ItemType.Fuse);
-                hud.transform.GetChild(2).GetChild(7).gameObject.SetActive(true);
-                Destroy(gameObject);
+                if (inventory.HasItem(Inv_ItemType.Rope))
+                {
+                    inventory.CollectItem(Inv_ItemType.Fuse);
+                    hud.transform.GetChild(2).GetChild(8).gameObject.SetActive(true);
+                    inventory.RemoveItem(Inv_ItemType.Rope);
+                }
                 break;
         }
     }
