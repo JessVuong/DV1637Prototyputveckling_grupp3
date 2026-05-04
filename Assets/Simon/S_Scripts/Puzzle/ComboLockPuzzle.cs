@@ -50,6 +50,8 @@ public class ComboLockPuzzle : MonoBehaviour, IInteractable
     [Tooltip("ChestAnimator")]
     [SerializeField] private Animator ChestAnim;
 
+    [Tooltip("PlayerPrefabTorch")]
+    [SerializeField] private GameObject Torch;
     public void Interact()
     {
         StartPuzzle();
@@ -167,7 +169,7 @@ public class ComboLockPuzzle : MonoBehaviour, IInteractable
         gameplayCamera.SetActive(false);
         closeUpCamera.SetActive(true);
         cc.enabled = false;
-
+        Torch.SetActive(false);
 
         puzzleStarts = true;
     }
@@ -194,9 +196,9 @@ public class ComboLockPuzzle : MonoBehaviour, IInteractable
         gameplayCamera.SetActive(true);
         closeUpCamera.SetActive(false);
         cc.enabled = true;
+        Torch.SetActive(true);
 
 
-        
 
         puzzleStarts = false;
     }

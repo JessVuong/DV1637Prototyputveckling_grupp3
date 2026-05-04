@@ -35,7 +35,8 @@ public class Paper : MonoBehaviour, IInteractable
     private float dragDepth; // Distance from camera to object at pickup time (locks depth so it doesn't drift)
     private Vector3 dragOffset; // Difference between object pivot and exact click point (prevents snapping to center)
 
-
+    [Tooltip("PlayerPrefabTorch")]
+    [SerializeField] private GameObject Torch;
 
     public void Interact()
     {
@@ -127,6 +128,8 @@ public class Paper : MonoBehaviour, IInteractable
 
         puzzleStarts = true;
 
+        Torch.SetActive(false);
+
 
 
     }
@@ -153,6 +156,8 @@ public class Paper : MonoBehaviour, IInteractable
         PaperPuzzleMain.GetComponent<BoxCollider>().enabled = true;
 
         puzzleStarts = false;
+
+        Torch.SetActive(true);
     }
 
     private RaycastHit Cast()
