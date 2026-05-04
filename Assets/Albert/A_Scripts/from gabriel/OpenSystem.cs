@@ -9,11 +9,13 @@ public class OpenSystem : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+            
         if (!opened && inventory.HasItem(Inv_ItemType.Key))
         {
             Open();
             //inventory.RemoveItem(Inv_ItemType.Key);
         }
+
     }
 
     public string GetInteractionText()
@@ -27,4 +29,6 @@ public class OpenSystem : MonoBehaviour, IInteractable
         animator.SetBool("IsOpen", true);
         opened = true;
     }
+
+    
 }
