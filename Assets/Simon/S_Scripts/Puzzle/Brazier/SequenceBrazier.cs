@@ -7,6 +7,7 @@ public class SequenceBrazier : MonoBehaviour
     [SerializeField] private GameObject[] braziers;
     private string CorrectSequence = "10342";
     string input = "";
+    public GameObject door;
 
     public void ActivateFire(GameObject brazier) 
     {
@@ -31,6 +32,8 @@ public class SequenceBrazier : MonoBehaviour
         if (input == CorrectSequence)
         {
             Debug.Log("Victory"); //Open Door
+            door.GetComponent<Animator>().SetBool("IsOpen", true);
+            door.GetComponent<OpenSystem>().opened = true;
         }
         else 
         { 
@@ -41,7 +44,6 @@ public class SequenceBrazier : MonoBehaviour
             }
 
 
-            Debug.Log("Redo"); // Remove Fire
         }
     }
 }
