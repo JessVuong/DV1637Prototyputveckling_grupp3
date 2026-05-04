@@ -8732,6 +8732,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Canon
   inventory: {fileID: 745977180}
   cannonBall: {fileID: 1132079902}
+  victory: {fileID: 0}
 --- !u!65 &1210301247
 BoxCollider:
   m_ObjectHideFlags: 0
