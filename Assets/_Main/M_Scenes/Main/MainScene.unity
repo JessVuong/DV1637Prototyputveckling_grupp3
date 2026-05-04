@@ -4441,6 +4441,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1803822222}
     - target: {fileID: 2183743813684488383, guid: 60ade1ba43865bd49b308b2bac0ddcb0, type: 3}
+      propertyPath: Torch
+      value: 
+      objectReference: {fileID: 1476369516}
+    - target: {fileID: 2183743813684488383, guid: 60ade1ba43865bd49b308b2bac0ddcb0, type: 3}
       propertyPath: mainCam
       value: 
       objectReference: {fileID: 722323543}
@@ -6328,38 +6332,6 @@ PrefabInstance:
     - target: {fileID: 4787537594460531450, guid: 8298bff192a449543a62526d50a30465, type: 3}
       propertyPath: m_Name
       value: PlayerPrefab
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907060160233721264, guid: 8298bff192a449543a62526d50a30465, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907060160233721264, guid: 8298bff192a449543a62526d50a30465, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.46000004
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907060160233721264, guid: 8298bff192a449543a62526d50a30465, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907060160233721264, guid: 8298bff192a449543a62526d50a30465, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907060160233721264, guid: 8298bff192a449543a62526d50a30465, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907060160233721264, guid: 8298bff192a449543a62526d50a30465, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907060160233721264, guid: 8298bff192a449543a62526d50a30465, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7749833170432446474, guid: 8298bff192a449543a62526d50a30465, type: 3}
-      propertyPath: maxDist
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12234,6 +12206,10 @@ PrefabInstance:
       propertyPath: cc
       value: 
       objectReference: {fileID: 1803822222}
+    - target: {fileID: 496599031727522816, guid: 8016f766d7c802a4f91fdb819127c15f, type: 3}
+      propertyPath: Torch
+      value: 
+      objectReference: {fileID: 1476369516}
     - target: {fileID: 496599031727522816, guid: 8016f766d7c802a4f91fdb819127c15f, type: 3}
       propertyPath: UIPanel
       value: 
