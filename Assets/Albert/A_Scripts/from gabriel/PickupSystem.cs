@@ -38,6 +38,7 @@ public class PickupSystem : MonoBehaviour, IInteractable
                 break;
             case "Paper_Pickup":
                 inventory.AddPaper_Pieces();
+                hud.transform.GetChild(2).GetChild(3).GetChild(inventory.Paper_Pieces-1).gameObject.SetActive(true);
                 Destroy(gameObject);
                 break;
             case "ArmoryKey_Pickup":
@@ -61,9 +62,12 @@ public class PickupSystem : MonoBehaviour, IInteractable
                 Destroy(gameObject);
                 break;
             case "Fuse_Pickup":
-                inventory.CollectItem(Inv_ItemType.Fuse);
-                hud.transform.GetChild(2).GetChild(8).gameObject.SetActive(true);
-                Destroy(gameObject);
+                if (inventory.HasItem(Inv_ItemType.Rope))
+                {
+                    inventory.CollectItem(Inv_ItemType.Fuse);
+                    hud.transform.GetChild(2).GetChild(8).gameObject.SetActive(true);
+                    inventory.RemoveItem(Inv_ItemType.Rope);
+                }
                 break;
         }
     }
