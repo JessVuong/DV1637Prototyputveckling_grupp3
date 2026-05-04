@@ -22,10 +22,8 @@ public class Paper : MonoBehaviour, IInteractable
 
     public GameObject rmbText;
 
-    /*
-    [SerializeField] private Inventory_System inventory;
+    public Inventory_System inventory;
     private int requiredPaperPieces = 5;
-     */
 
 
     [Tooltip("Virtual Camera on PlayerPrefab")]
@@ -103,13 +101,14 @@ public class Paper : MonoBehaviour, IInteractable
 
     public void StartPuzzle()
     {
-        /*      TEMPORARY IDEA UNTIL I GET CONFIRMATION ON HOW TO DO IT
-        if (inventory.GetItemAmount("Paper_pieces") < requiredPaperPieces)
+        
+        if (inventory.Paper_Pieces < requiredPaperPieces)
         {
             Debug.Log("There are still some missing pieces.");
+
             return;
         }
-        */
+
         rmbText.SetActive(true);
 
         

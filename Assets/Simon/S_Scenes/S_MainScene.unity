@@ -4345,6 +4345,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1432527873}
     - target: {fileID: 2183743813684488383, guid: 60ade1ba43865bd49b308b2bac0ddcb0, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 745977180}
+    - target: {fileID: 2183743813684488383, guid: 60ade1ba43865bd49b308b2bac0ddcb0, type: 3}
       propertyPath: gameplayCamera
       value: 
       objectReference: {fileID: 1329554553}
