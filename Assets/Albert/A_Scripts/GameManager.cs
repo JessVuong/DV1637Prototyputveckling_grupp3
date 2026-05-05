@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class GameManagerScript : MonoBehaviour
 {
-    public TimerScript timer;
+    private TimerScript timer;
     public PauseMenu pauseMenu;
     public GameObject hud;
     public GameObject defeatScreen;
@@ -13,6 +13,7 @@ public class GameManagerScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        timer = gameObject.GetComponent<TimerScript>();
         timer.StartTimer();
     }
 

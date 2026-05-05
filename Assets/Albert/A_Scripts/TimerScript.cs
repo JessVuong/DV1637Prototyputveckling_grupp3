@@ -1,15 +1,10 @@
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class TimerScript : MonoBehaviour
 {
-    public float remainingTime;
     bool isRunning = false;
-    public GameManagerScript game;
-
-    private void Start()
-    {
-        isRunning = true;
-    }
+    public float remainingTime;
 
     // Update is called once per frame
     void Update()
@@ -22,7 +17,7 @@ public class TimerScript : MonoBehaviour
         if (remainingTime <= 0 )
         {
             remainingTime = 0;
-            game.Defeat();
+            gameObject.GetComponent<GameManagerScript>().Defeat();
         }
     }
 
