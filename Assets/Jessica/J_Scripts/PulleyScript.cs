@@ -5,6 +5,7 @@ public class PulleyScript : MonoBehaviour, IInteractable
     public Animator animator;
     public Inventory_System inventory;
     public GameObject door;
+    public GameObject hammer;
 
     public void Interact()
     {
@@ -15,6 +16,7 @@ public class PulleyScript : MonoBehaviour, IInteractable
 
         if (inventory.HasItem(Inv_ItemType.Hammer))
         {
+            hammer.SetActive(true);
             door.GetComponent<Animator>().SetBool("IsOpen", true);
             door.GetComponent<OpenSystem>().opened = true;  
         }
