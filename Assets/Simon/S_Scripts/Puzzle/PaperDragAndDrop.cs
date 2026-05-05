@@ -3,6 +3,7 @@ using System.Reflection;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using TMPro;
 
 public class Paper : MonoBehaviour, IInteractable
 { 
@@ -37,6 +38,8 @@ public class Paper : MonoBehaviour, IInteractable
 
     [Tooltip("PlayerPrefabTorch")]
     [SerializeField] private GameObject Torch;
+    [Tooltip("HUD")]
+    [SerializeField] private HUDControl hud;
 
     public void Interact()
     {
@@ -105,7 +108,7 @@ public class Paper : MonoBehaviour, IInteractable
         
         if (inventory.Paper_Pieces < requiredPaperPieces)
         {
-            Debug.Log("There are still some missing pieces.");
+            hud.ShowHint("There are still some pieces missing...");
 
             return;
         }

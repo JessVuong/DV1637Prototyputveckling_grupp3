@@ -37,10 +37,10 @@ public class ActiveRay : MonoBehaviour
         {
             currentInteractable = hit.collider.GetComponent<IInteractable>();
 
-            if (currentInteractable != null)
+            /*if (currentInteractable != null)
             {
-                //Debug.Log(currentInteractable.GetInteractionText());
-            }
+                Debug.Log(currentInteractable.GetInteractionText());
+            }*/
         }
         else
         {

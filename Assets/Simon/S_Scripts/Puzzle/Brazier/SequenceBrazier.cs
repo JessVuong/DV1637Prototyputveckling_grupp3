@@ -9,6 +9,9 @@ public class SequenceBrazier : MonoBehaviour
     string input = "";
     public GameObject door;
 
+    [Tooltip("HUD")]
+    [SerializeField] private HUDControl hud;
+
     public void ActivateFire(GameObject brazier) 
     {
         for (int i = 0;i < braziers.Length; i++)
@@ -42,7 +45,7 @@ public class SequenceBrazier : MonoBehaviour
             {
                 braziers[i].transform.GetChild(0).gameObject.SetActive(false);
             }
-
+            hud.ShowHint("Let's try that again...");
 
         }
     }

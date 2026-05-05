@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IgniteSystem
   inventory: {fileID: 0}
+  hud: {fileID: 0}
 --- !u!65 &5326620040140735302
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -268,6 +269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IgniteSystem
   inventory: {fileID: 0}
+  hud: {fileID: 0}
 --- !u!65 &8310820278304339505
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -387,6 +389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IgniteSystem
   inventory: {fileID: 0}
+  hud: {fileID: 0}
 --- !u!65 &1119844339386871969
 BoxCollider:
   m_ObjectHideFlags: 0

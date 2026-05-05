@@ -1,12 +1,18 @@
+using System.Collections;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class HUDControl : MonoBehaviour
 {
+    [Tooltip("Timer variables")]
     public TimerScript timer;
     public GameObject timerUI;
     private float startTime;
+
+    [Tooltip("Hint variables")]
+    [SerializeField] private GameObject hint;
+    private float hintDuration;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -35,5 +41,19 @@ public class HUDControl : MonoBehaviour
         {
             timerUI.GetComponent<Animator>().enabled = true;
         }
+    }
+
+    public void ShowHint(string text, float duration = 3f)
+    {
+        hint.GetComponent<TextMeshProUGUI>().text = text;
+        hintDuration = duration;
+        StartCoroutine("WaitForDuration");
+    }
+
+    public IEnumerator WaitForDuration()
+    {
+        hint.SetActive(true);
+        yield return new WaitForSeconds(hintDuration);
+        hint.SetActive(false);
     }
 }

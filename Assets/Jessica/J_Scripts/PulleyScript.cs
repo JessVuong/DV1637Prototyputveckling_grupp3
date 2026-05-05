@@ -7,6 +7,9 @@ public class PulleyScript : MonoBehaviour, IInteractable
     public GameObject door;
     public GameObject hammer;
 
+    [Tooltip("HUD")]
+    [SerializeField] private HUDControl hud;
+
     public void Interact()
     {
         if (!inventory.HasItem(Inv_ItemType.Hammer))
@@ -30,7 +33,7 @@ public class PulleyScript : MonoBehaviour, IInteractable
 
     private void Ajar()
     {
-        
+        hud.ShowHint("I need to weigh this down with something...");
         door.GetComponent<Animator>().SetTrigger("Ajar");
 
     }

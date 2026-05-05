@@ -6,6 +6,9 @@ public class PickupSystem : MonoBehaviour, IInteractable
     public GameObject playerTorch;
     public GameObject hud;
 
+    [Tooltip("HUD")]
+    [SerializeField] private HUDControl hudScript;
+
     public void Interact()
     {
         PickUp();
@@ -68,7 +71,11 @@ public class PickupSystem : MonoBehaviour, IInteractable
                     hud.transform.GetChild(2).GetChild(8).gameObject.SetActive(true);
                     inventory.RemoveItem(Inv_ItemType.Rope);
                 }
-                break;
+                else
+                {
+                    hudScript.ShowHint("I could use this to make a fuse if I had a piece of rope...");
+                }
+                    break;
         }
     }
 }
