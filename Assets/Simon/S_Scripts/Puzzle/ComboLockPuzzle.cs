@@ -143,11 +143,15 @@ public class ComboLockPuzzle : MonoBehaviour, IInteractable
     }
     public IEnumerator CompletedGame() //using IE to cause a small wait before showing results, unlock animation
     {
-        
+
+
         UIPanel.SetActive(false);
+
+        LockAnim.SetTrigger("t_LockOpen");
+        yield return new WaitForSeconds(.5f);
         EndPuzzle();
         this.gameObject.GetComponent<BoxCollider>().enabled = false;
-        LockAnim.SetTrigger("t_LockOpen");
+        
         yield return new WaitForSeconds(1f);
         this.gameObject.SetActive(false);
         ChestAnim.SetTrigger("t_ChestOpen");

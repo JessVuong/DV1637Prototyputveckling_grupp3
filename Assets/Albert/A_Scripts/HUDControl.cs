@@ -37,7 +37,7 @@ public class HUDControl : MonoBehaviour
             timerUI.GetComponent<TextMeshProUGUI>().color = Color.red;
         }
 
-        if (timer.remainingTime <= startTime / 4 && timerUI.GetComponent<Animator>().enabled == false)
+        if (timer.remainingTime <= 60 && timerUI.GetComponent<Animator>().enabled == false)
         {
             timerUI.GetComponent<Animator>().enabled = true;
         }

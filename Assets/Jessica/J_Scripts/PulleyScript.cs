@@ -6,6 +6,7 @@ public class PulleyScript : MonoBehaviour, IInteractable
     public Inventory_System inventory;
     public GameObject door;
     public GameObject hammer;
+    public bool hasInteracted = false;
 
     [Tooltip("HUD")]
     [SerializeField] private HUDControl hud;
@@ -35,7 +36,7 @@ public class PulleyScript : MonoBehaviour, IInteractable
     {
         hud.ShowHint("I need to weigh this down with something...");
         door.GetComponent<Animator>().SetTrigger("Ajar");
-
+        hasInteracted = true;
     }
 
 }

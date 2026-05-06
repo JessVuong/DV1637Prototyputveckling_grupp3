@@ -4,6 +4,7 @@ public class PickupSystem : MonoBehaviour, IInteractable
 {
     public Inventory_System inventory;
     public GameObject playerTorch;
+    [SerializeField] private PulleyScript pulley;
     public GameObject hud;
 
     [Tooltip("HUD")]
@@ -50,10 +51,17 @@ public class PickupSystem : MonoBehaviour, IInteractable
                 Destroy(gameObject);
                 break;
             case "Hammer_Pickup":
-                inventory.CollectItem(Inv_ItemType.Hammer);
-                hud.transform.GetChild(2).GetChild(5).gameObject.SetActive(true);
-                Destroy(gameObject);
-                break;
+                if (pulley.hasInteracted)
+                {
+                    inventory.CollectItem(Inv_ItemType.Hammer);
+                    hud.transform.GetChild(2).GetChild(5).gameObject.SetActive(true);
+                    Destroy(gameObject);
+                }
+                else
+                {
+                    hudScript.ShowHint("This looks heavy...");
+                }
+                    break;
             case "Gunpowder_Pickup":
                 inventory.CollectItem(Inv_ItemType.Gunpowder);
                 hud.transform.GetChild(2).GetChild(6).gameObject.SetActive(true);
@@ -69,6 +77,7 @@ public class PickupSystem : MonoBehaviour, IInteractable
                 {
                     inventory.CollectItem(Inv_ItemType.Fuse);
                     hud.transform.GetChild(2).GetChild(8).gameObject.SetActive(true);
+                    hudScript.ShowHint("Fuse aquired");
                 }
                 else
                 {
