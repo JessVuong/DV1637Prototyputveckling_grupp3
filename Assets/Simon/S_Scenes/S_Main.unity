@@ -3474,6 +3474,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 331135165186338458, guid: 09c0e4ea1b94e104885eeb95aecbefef, type: 3}
   m_PrefabInstance: {fileID: 449096355}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &456053483 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8143227488257622332, guid: 8764809a150835a43a67366d999d9da6, type: 3}
+  m_PrefabInstance: {fileID: 3881624315499150945}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &467341902 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9393b66f06594d949add4a0986050a9c, type: 3}
@@ -4401,6 +4406,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 776268655246905844, guid: 60ade1ba43865bd49b308b2bac0ddcb0, type: 3}
+      propertyPath: m_Lens.FieldOfView
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 2183743813684488383, guid: 60ade1ba43865bd49b308b2bac0ddcb0, type: 3}
       propertyPath: cc
       value: 
@@ -4425,6 +4434,10 @@ PrefabInstance:
       propertyPath: inventory
       value: 
       objectReference: {fileID: 745977180}
+    - target: {fileID: 2183743813684488383, guid: 60ade1ba43865bd49b308b2bac0ddcb0, type: 3}
+      propertyPath: InventoryFrame
+      value: 
+      objectReference: {fileID: 456053483}
     - target: {fileID: 2183743813684488383, guid: 60ade1ba43865bd49b308b2bac0ddcb0, type: 3}
       propertyPath: gameplayCamera
       value: 
@@ -4558,6 +4571,10 @@ PrefabInstance:
       propertyPath: victoryScreen
       value: 
       objectReference: {fileID: 1519962923}
+    - target: {fileID: 8106500382161276595, guid: 85c16507da679414ca53f5d3e30b70b4, type: 3}
+      propertyPath: Paper_Pieces
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6289,7 +6306,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4476537170133822497, guid: 8298bff192a449543a62526d50a30465, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.076
+      value: -5.84
       objectReference: {fileID: 0}
     - target: {fileID: 4476537170133822497, guid: 8298bff192a449543a62526d50a30465, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6297,7 +6314,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4476537170133822497, guid: 8298bff192a449543a62526d50a30465, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.968
+      value: -0.38
       objectReference: {fileID: 0}
     - target: {fileID: 4476537170133822497, guid: 8298bff192a449543a62526d50a30465, type: 3}
       propertyPath: m_LocalRotation.w
@@ -12072,6 +12089,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 152139077}
     - target: {fileID: 496599031727522816, guid: 8016f766d7c802a4f91fdb819127c15f, type: 3}
+      propertyPath: InventoryFrame
+      value: 
+      objectReference: {fileID: 456053483}
+    - target: {fileID: 496599031727522816, guid: 8016f766d7c802a4f91fdb819127c15f, type: 3}
       propertyPath: gameplayCamera
       value: 
       objectReference: {fileID: 1329554553}
@@ -13328,6 +13349,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 330676750}
+    - target: {fileID: 8143227488257622332, guid: 8764809a150835a43a67366d999d9da6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

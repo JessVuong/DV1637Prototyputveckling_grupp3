@@ -4483,6 +4483,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 745977180}
     - target: {fileID: 2183743813684488383, guid: 60ade1ba43865bd49b308b2bac0ddcb0, type: 3}
+      propertyPath: InventoryFrame
+      value: 
+      objectReference: {fileID: 3881624315499150947}
+    - target: {fileID: 2183743813684488383, guid: 60ade1ba43865bd49b308b2bac0ddcb0, type: 3}
       propertyPath: gameplayCamera
       value: 
       objectReference: {fileID: 1329554553}
@@ -12243,6 +12247,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 152139077}
     - target: {fileID: 496599031727522816, guid: 8016f766d7c802a4f91fdb819127c15f, type: 3}
+      propertyPath: InventoryFrame
+      value: 
+      objectReference: {fileID: 3881624315499150947}
+    - target: {fileID: 496599031727522816, guid: 8016f766d7c802a4f91fdb819127c15f, type: 3}
       propertyPath: gameplayCamera
       value: 
       objectReference: {fileID: 1329554553}
@@ -13458,6 +13466,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a9811130b766294c8a086b584a550be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HUDControl
+--- !u!1 &3881624315499150947 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8143227488257622332, guid: 8764809a150835a43a67366d999d9da6, type: 3}
+  m_PrefabInstance: {fileID: 3881624315499150945}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3919060930882225219
 PrefabInstance:
   m_ObjectHideFlags: 0

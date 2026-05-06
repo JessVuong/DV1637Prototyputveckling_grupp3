@@ -52,6 +52,8 @@ public class ComboLockPuzzle : MonoBehaviour, IInteractable
 
     [Tooltip("PlayerPrefabTorch")]
     [SerializeField] private GameObject Torch;
+    [Tooltip("InventoryFrame")]
+    [SerializeField] private GameObject InventoryFrame;
     public void Interact()
     {
         StartPuzzle();
@@ -171,6 +173,8 @@ public class ComboLockPuzzle : MonoBehaviour, IInteractable
         cc.enabled = false;
         Torch.SetActive(false);
 
+        InventoryFrame.SetActive(false);
+
         puzzleStarts = true;
     }
     public IEnumerator WaitToExit() //using IE to cause a small wait . for camera
@@ -197,6 +201,7 @@ public class ComboLockPuzzle : MonoBehaviour, IInteractable
         closeUpCamera.SetActive(false);
         cc.enabled = true;
         Torch.SetActive(true);
+        InventoryFrame.SetActive(true);
 
 
 

@@ -40,6 +40,8 @@ public class Paper : MonoBehaviour, IInteractable
     [SerializeField] private GameObject Torch;
     [Tooltip("HUD")]
     [SerializeField] private HUDControl hud;
+    [Tooltip("InventoryFrame")]
+    [SerializeField] private GameObject InventoryFrame;
 
     public void Interact()
     {
@@ -132,6 +134,7 @@ public class Paper : MonoBehaviour, IInteractable
         puzzleStarts = true;
 
         Torch.SetActive(false);
+        InventoryFrame.SetActive(false);
 
 
 
@@ -161,6 +164,7 @@ public class Paper : MonoBehaviour, IInteractable
         puzzleStarts = false;
 
         Torch.SetActive(true);
+        InventoryFrame.SetActive(true);
     }
 
     private RaycastHit Cast()
@@ -171,7 +175,8 @@ public class Paper : MonoBehaviour, IInteractable
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
 
         Physics.Raycast(ray, out RaycastHit hit);
-        
+        //Debug.DrawRay(ray.origin, ray.direction * 100, Color.red,2);
+
         return hit;
     }
 

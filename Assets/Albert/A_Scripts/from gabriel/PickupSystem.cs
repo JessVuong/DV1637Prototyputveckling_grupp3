@@ -69,7 +69,6 @@ public class PickupSystem : MonoBehaviour, IInteractable
                 {
                     inventory.CollectItem(Inv_ItemType.Fuse);
                     hud.transform.GetChild(2).GetChild(8).gameObject.SetActive(true);
-                    inventory.RemoveItem(Inv_ItemType.Rope);
                 }
                 else
                 {
