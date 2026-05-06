@@ -12979,7 +12979,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4429736673980733840, guid: f753a5adfad62fe41a255a0088f6a054, type: 3}
       propertyPath: m_Name
-      value: Plane
+      value: Translation
       objectReference: {fileID: 0}
     - target: {fileID: 5124820138018939296, guid: f753a5adfad62fe41a255a0088f6a054, type: 3}
       propertyPath: m_LocalPosition.x
