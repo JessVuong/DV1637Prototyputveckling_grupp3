@@ -11799,6 +11799,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4520080802057540508, guid: 6eba602febd7d744197c7c445aba4f89, type: 3}
   m_PrefabInstance: {fileID: 711905424}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &713066825
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 713066826}
+  m_Layer: 0
+  m_Name: Listen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &713066826
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 713066825}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.54107, y: 0.08391, z: 0.12136}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &713078371
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13740,6 +13771,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5199881254769939664, guid: 8298bff192a449543a62526d50a30465, type: 3}
+      propertyPath: torch
+      value: 
+      objectReference: {fileID: 1476369516}
+    - target: {fileID: 5199881254769939664, guid: 8298bff192a449543a62526d50a30465, type: 3}
+      propertyPath: soundManager
+      value: 
+      objectReference: {fileID: 1300770037}
     - target: {fileID: 6813570295197818993, guid: 8298bff192a449543a62526d50a30465, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -32455,3 +32494,4 @@ SceneRoots:
   - {fileID: 3919060930882225219}
   - {fileID: 1437495161}
   - {fileID: 402121613}
+  - {fileID: 713066826}

@@ -26,11 +26,11 @@ public class PickupSystem : MonoBehaviour, IInteractable
         switch (tag)
         {
             case "Start_Torch":
+                // torch noise breaks the camera
                 inventory.CollectItem(Inv_ItemType.Torch);
                 playerTorch.SetActive(true);
                 hud.transform.GetChild(2).GetChild(0).gameObject.SetActive(true);
                 Destroy(gameObject);
-                SoundManager.PlaySound(SoundType.Flame);
                 break;
             case "CellKey_Pickup":
                 inventory.CollectItem(Inv_ItemType.Key);
