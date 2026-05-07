@@ -6,6 +6,7 @@ public class PickupSystem : MonoBehaviour, IInteractable
     public GameObject playerTorch;
     [SerializeField] private PulleyScript pulley;
     public GameObject hud;
+    public SoundManager soundManager;
 
     [Tooltip("HUD")]
     [SerializeField] private HUDControl hudScript;
@@ -29,6 +30,7 @@ public class PickupSystem : MonoBehaviour, IInteractable
                 playerTorch.SetActive(true);
                 hud.transform.GetChild(2).GetChild(0).gameObject.SetActive(true);
                 Destroy(gameObject);
+                SoundManager.PlaySound(SoundType.Flame);
                 break;
             case "CellKey_Pickup":
                 inventory.CollectItem(Inv_ItemType.Key);
@@ -75,9 +77,11 @@ public class PickupSystem : MonoBehaviour, IInteractable
             case "Fuse_Pickup":
                 if (inventory.HasItem(Inv_ItemType.Rope))
                 {
+                    SoundManager.PlaySound(SoundType.RopeCut);
                     inventory.CollectItem(Inv_ItemType.Fuse);
                     hud.transform.GetChild(2).GetChild(8).gameObject.SetActive(true);
                     hudScript.ShowHint("Fuse aquired");
+                    
                 }
                 else
                 {

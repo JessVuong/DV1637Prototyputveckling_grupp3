@@ -4,6 +4,7 @@ public class OpenSystem : MonoBehaviour, IInteractable
 {
     public Animator animator;
     public Inventory_System inventory;
+    public SoundManager soundManager;
 
     public bool opened = false;
 
@@ -14,6 +15,8 @@ public class OpenSystem : MonoBehaviour, IInteractable
         {
             Open();
             inventory.RemoveItem(Inv_ItemType.Key);
+            //audio clip open door
+            
         }
 
     }
@@ -28,6 +31,7 @@ public class OpenSystem : MonoBehaviour, IInteractable
     {
         animator.SetBool("IsOpen", true);
         opened = true;
+        SoundManager.PlaySound(SoundType.UnlockDoor);
     }
 
     

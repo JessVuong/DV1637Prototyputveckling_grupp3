@@ -6,6 +6,7 @@ public class Canon : MonoBehaviour, IInteractable
     public Inventory_System inventory;
     public GameObject cannonBall;
     public GameManagerScript victory;
+    public SoundManager soundManager;
 
     private int i = 0;
 
@@ -66,6 +67,8 @@ public class Canon : MonoBehaviour, IInteractable
         yield return new WaitForSeconds(0.5f);
 
         cannonBall.GetComponent<Animator>().SetTrigger("Fire");
+
+        SoundManager.PlaySound(SoundType.FireCannon);
         
         yield return new WaitForSeconds(2f);
         

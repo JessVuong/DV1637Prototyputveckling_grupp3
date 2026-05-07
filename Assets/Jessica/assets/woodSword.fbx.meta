@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 26f730e8487afad4a8071e2495cbeac9
+guid: 3f7301a04931cac488c8a25b771a67a9
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Pink
-    second: {fileID: -8801323860392387912, guid: 7d22da268d7a3fd42ba06231ef67830c, type: 3}
+      name: wood
+    second: {fileID: -4770390735465466038, guid: 6aaa601a7173dda48b5922ab807dd28f, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -1,0 +1,39 @@
+using UnityEngine;
+
+public enum SoundType
+{
+    Flame,
+    BraizerIgnite,
+    WrongSequence,
+    UnlockDoor,
+    AjarClose,
+    RopeCut,
+    FireCannon
+
+}
+
+[RequireComponent(typeof(AudioSource))]
+
+public class SoundManager : MonoBehaviour
+{
+    [SerializeField] private AudioClip[] soundList;
+    private static SoundManager instance;
+    private AudioSource audioSource;
+    
+
+    private void Awake()
+    {
+        instance = this;
+    }
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
+    public static void PlaySound(SoundType sound, float voloume = 1)
+    {
+        instance.audioSource.PlayOneShot(instance.soundList[(int)sound], voloume);
+
+
+    }
+}
