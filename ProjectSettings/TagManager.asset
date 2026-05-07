@@ -15,6 +15,7 @@ TagManager:
   - Rope_Pickup
   - CellKey_Pickup
   - ArmoryKey_Pickup
+  - isInteractable
   layers:
   - Default
   - TransparentFX

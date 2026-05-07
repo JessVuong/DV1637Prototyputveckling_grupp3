@@ -6507,6 +6507,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 815193159243465565, guid: 8298bff192a449543a62526d50a30465, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4476537170133822497, guid: 8298bff192a449543a62526d50a30465, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.076
@@ -6563,6 +6567,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7749833170432446474, guid: 8298bff192a449543a62526d50a30465, type: 3}
+      propertyPath: hud
+      value: 
+      objectReference: {fileID: 5760196678593165405}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9087,6 +9095,7 @@ MonoBehaviour:
   inventory: {fileID: 745977180}
   cannonBall: {fileID: 1132079902}
   victory: {fileID: 745977179}
+  hud: {fileID: 0}
 --- !u!65 &1210301247
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10754,24 +10763,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dac34e69977342e44b6ecc00ce37dd8e, type: 3}
---- !u!1 &1590754812 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4256729047793869250, guid: bb31eecb855a4754aa76c779afa33d03, type: 3}
-  m_PrefabInstance: {fileID: 8604537455153425124}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1590754813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1590754812}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d268a948407ed74ab0f5e6d8aca506f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::IgniteSystem
-  inventory: {fileID: 745977180}
 --- !u!4 &1616901420 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 44ce460f951368f49851db6a93f685b1, type: 3}
@@ -14213,6 +14204,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 154154502418027279, guid: 8764809a150835a43a67366d999d9da6, type: 3}
   m_PrefabInstance: {fileID: 3881624315499150945}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5760196678593165407 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 743937347163944661, guid: 8764809a150835a43a67366d999d9da6, type: 3}
+  m_PrefabInstance: {fileID: 3881624315499150945}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5760196678593165405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a9811130b766294c8a086b584a550be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HUDControl
 --- !u!1001 &6445525259018375542
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14351,6 +14353,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChickenLeg
       objectReference: {fileID: 0}
+    - target: {fileID: 2582879062674291073, guid: 4431d7905381d3048b758316ce6a3d59, type: 3}
+      propertyPath: m_TagString
+      value: isInteractable
+      objectReference: {fileID: 0}
     - target: {fileID: 2923938411034108731, guid: 4431d7905381d3048b758316ce6a3d59, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.61
@@ -14483,6 +14489,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2270564670477698844, guid: bb31eecb855a4754aa76c779afa33d03, type: 3}
+      propertyPath: hud
+      value: 
+      objectReference: {fileID: 5760196678593165407}
+    - target: {fileID: 2270564670477698844, guid: bb31eecb855a4754aa76c779afa33d03, type: 3}
       propertyPath: inventory
       value: 
       objectReference: {fileID: 745977180}
@@ -14527,6 +14537,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4228128345283034362, guid: bb31eecb855a4754aa76c779afa33d03, type: 3}
+      propertyPath: hud
+      value: 
+      objectReference: {fileID: 5760196678593165407}
+    - target: {fileID: 4228128345283034362, guid: bb31eecb855a4754aa76c779afa33d03, type: 3}
       propertyPath: inventory
       value: 
       objectReference: {fileID: 745977180}
@@ -14535,16 +14549,17 @@ PrefabInstance:
       value: IvyBlockage
       objectReference: {fileID: 0}
     - target: {fileID: 7148624171146556569, guid: bb31eecb855a4754aa76c779afa33d03, type: 3}
+      propertyPath: hud
+      value: 
+      objectReference: {fileID: 5760196678593165407}
+    - target: {fileID: 7148624171146556569, guid: bb31eecb855a4754aa76c779afa33d03, type: 3}
       propertyPath: inventory
       value: 
       objectReference: {fileID: 745977180}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4256729047793869250, guid: bb31eecb855a4754aa76c779afa33d03, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1590754813}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb31eecb855a4754aa76c779afa33d03, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

@@ -5,15 +5,17 @@ using UnityEngine.InputSystem;
 public class InvestigateSystem : MonoBehaviour, IInteractable
 {
     [SerializeField] private Transform investigatePosition;
+    private bool isInteractable = false;
+    private bool isHolding = false;
+    GameObject heldItem;
     private Rigidbody objectRigidbody;
 
     
 
     public void Interact()
     {
-        //when click ineract
-
         isInteractable = true;
+        
     }
 
     public string GetInteractionText()
@@ -24,18 +26,25 @@ public class InvestigateSystem : MonoBehaviour, IInteractable
     
     void Update()
     {
-   
-        if (Input.GetMouseButton(0) && isinteractable) //moue button held + item is interactable
+        if (Input.GetMouseButton(0) && isInteractable) //moue button held + item is interactable
         {
-            this.investigatePosition = investigatePosition;
-
-            Debug.Log("Pressed left hold");
-
-            if (investigatePosition != null)
+            if (!isHolding)
             {
-                objectRigidbody.MovePosition(investigatePosition.position);
+                heldItem = this.gameObject;
+                isHolding = true;
             }
 
+        }
+        if (isHolding)
+            {
+                this.transform.position = investigatePosition.position;
+            }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            heldItem = null;
+            isInteractable = false;
+            isHolding = false;
         }
     }
 
