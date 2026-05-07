@@ -5,14 +5,17 @@ public class ActiveRay : MonoBehaviour
     // Max distance for the raycast
     public float maxDist = 2f;
 
-    // Variables to track the current and last interactable being looked at, the current is used for interactions and the last WILL BE used for showing hints on the UI
+    // Variables to track the current interactable being looked at
     private IInteractable currentInteractable;
-    private IInteractable lastInteractable;
+
+    [SerializeField] private GameObject hud;
+    private GameObject crosshairHighlight;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        crosshairHighlight = hud.transform.GetChild(4).gameObject;
     }
 
     // Update is called once per frame
@@ -37,13 +40,15 @@ public class ActiveRay : MonoBehaviour
         {
             currentInteractable = hit.collider.GetComponent<IInteractable>();
 
-            /*if (currentInteractable != null)
+            if (currentInteractable != null)
             {
-                Debug.Log(currentInteractable.GetInteractionText());
-            }*/
+                crosshairHighlight.SetActive(true);
+                //Debug.Log(currentInteractable.GetInteractionText());
+            }
         }
         else
         {
+            crosshairHighlight.SetActive(false);
             currentInteractable = null;
         }
     }
