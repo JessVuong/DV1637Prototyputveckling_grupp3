@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 4560135918645848400}
   - component: {fileID: 6037198067194522259}
   m_Layer: 0
-  m_Name: Point Light
+  m_Name: Flame Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -135,7 +135,7 @@ Light:
   m_Type: 2
   m_Color: {r: 1, g: 0.8764848, b: 0.65471697, a: 1}
   m_Intensity: 1
-  m_Range: 10
+  m_Range: 3.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize2D: {x: 0.5, y: 0.5}
