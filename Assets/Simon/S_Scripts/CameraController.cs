@@ -4,7 +4,7 @@ public class CameraController : MonoBehaviour
 {
     [Tooltip("This value determines sensitivity of mouse")]
     [SerializeField] // Makes the private variable right below it editable within the Editor without making it public
-    float mSensitivity = 300f;
+    public float mSensitivity = 300f;
     float xRot = 0f;
 
     void Start()

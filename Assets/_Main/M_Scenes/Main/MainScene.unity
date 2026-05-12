@@ -8758,6 +8758,14 @@ PrefabInstance:
       propertyPath: timer
       value: 
       objectReference: {fileID: 1563358854}
+    - target: {fileID: 5450945590692918919, guid: 9cd2adf0878f5db4c9501f91209c6c1b, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1300770038}
+    - target: {fileID: 5450945590692918919, guid: 9cd2adf0878f5db4c9501f91209c6c1b, type: 3}
+      propertyPath: gameplayCamera
+      value: 
+      objectReference: {fileID: 854243305}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 1954347666204140021, guid: 9cd2adf0878f5db4c9501f91209c6c1b, type: 3}
@@ -13753,6 +13761,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8298bff192a449543a62526d50a30465, type: 3}
+--- !u!114 &854243305 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4504380905590773728, guid: 8298bff192a449543a62526d50a30465, type: 3}
+  m_PrefabInstance: {fileID: 854243304}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329554553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e10273178229a9d4b92f415161b7413c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraController
 --- !u!1001 &857436924
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20051,6 +20070,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 951fc5f9d173645478951adb7a97cf80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundManager
+--- !u!82 &1300770038 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3042208274652745749, guid: c632441ee6e75d64a91e206fc91b4d08, type: 3}
+  m_PrefabInstance: {fileID: 1300770036}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1302597284 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 09092b601a372df498d939484a6b2f48, type: 3}
