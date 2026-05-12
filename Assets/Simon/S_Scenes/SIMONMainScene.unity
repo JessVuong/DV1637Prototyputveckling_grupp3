@@ -8848,6 +8848,14 @@ PrefabInstance:
       propertyPath: timer
       value: 
       objectReference: {fileID: 1563358854}
+    - target: {fileID: 5450945590692918919, guid: 9cd2adf0878f5db4c9501f91209c6c1b, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1810146404}
+    - target: {fileID: 5450945590692918919, guid: 9cd2adf0878f5db4c9501f91209c6c1b, type: 3}
+      propertyPath: gameplayCamera
+      value: 
+      objectReference: {fileID: 1329554555}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 1954347666204140021, guid: 9cd2adf0878f5db4c9501f91209c6c1b, type: 3}
@@ -13853,6 +13861,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2072453332787007802, guid: 8298bff192a449543a62526d50a30465, type: 3}
+      propertyPath: near clip plane
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2072453332787007802, guid: 8298bff192a449543a62526d50a30465, type: 3}
       propertyPath: m_BackGroundColor.a
       value: 1
       objectReference: {fileID: 0}
@@ -13912,10 +13924,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4504380905590773728, guid: 8298bff192a449543a62526d50a30465, type: 3}
-      propertyPath: mSensitivity
-      value: 600
-      objectReference: {fileID: 0}
     - target: {fileID: 4787537594460531450, guid: 8298bff192a449543a62526d50a30465, type: 3}
       propertyPath: m_Name
       value: PlayerPrefab
@@ -13940,6 +13948,10 @@ PrefabInstance:
       propertyPath: hud
       value: 
       objectReference: {fileID: 5760196678593165405}
+    - target: {fileID: 8407621541169843114, guid: 8298bff192a449543a62526d50a30465, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20198,7 +20210,7 @@ PrefabInstance:
     - target: {fileID: 2565278605517092048, guid: c632441ee6e75d64a91e206fc91b4d08, type: 3}
       propertyPath: 'soundList.Array.data[0]'
       value: 
-      objectReference: {fileID: 8300000, guid: e78ed7c1b1cd20441980a13a89e25d22, type: 3}
+      objectReference: {fileID: 8300000, guid: 25d9a2ba0e362b9448d0387dab558e0e, type: 3}
     - target: {fileID: 2565278605517092048, guid: c632441ee6e75d64a91e206fc91b4d08, type: 3}
       propertyPath: 'soundList.Array.data[1]'
       value: 
@@ -20223,6 +20235,10 @@ PrefabInstance:
       propertyPath: 'soundList.Array.data[6]'
       value: 
       objectReference: {fileID: 8300000, guid: 1d8c5002db44f5249b896dcc7e04bd37, type: 3}
+    - target: {fileID: 3042208274652745749, guid: c632441ee6e75d64a91e206fc91b4d08, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3042208274652745749, guid: c632441ee6e75d64a91e206fc91b4d08, type: 3}
       propertyPath: m_Volume
       value: 0.2
@@ -20620,6 +20636,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3372529893159055464, guid: 8298bff192a449543a62526d50a30465, type: 3}
   m_PrefabInstance: {fileID: 854243304}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1329554555 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4504380905590773728, guid: 8298bff192a449543a62526d50a30465, type: 3}
+  m_PrefabInstance: {fileID: 854243304}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329554553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e10273178229a9d4b92f415161b7413c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraController
 --- !u!1 &1332196040 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4637fe61de8590b49b99970464beb6d3, type: 3}
@@ -26527,6 +26554,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5984077172968855369, guid: 80659fd2437f53d43a2266008aa489ea, type: 3}
   m_PrefabInstance: {fileID: 1810017940}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1810146404 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3042208274652745749, guid: c632441ee6e75d64a91e206fc91b4d08, type: 3}
+  m_PrefabInstance: {fileID: 1300770036}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1815339802
 PrefabInstance:
