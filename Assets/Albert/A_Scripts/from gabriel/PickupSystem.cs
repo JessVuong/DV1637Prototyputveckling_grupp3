@@ -27,6 +27,7 @@ public class PickupSystem : MonoBehaviour, IInteractable
         {
             case "Start_Torch":
                 // torch noise breaks the camera
+                SoundManager.PlaySound(SoundType.Flame,1, true);
                 inventory.CollectItem(Inv_ItemType.Torch);
                 playerTorch.SetActive(true);
                 hud.transform.GetChild(2).GetChild(0).gameObject.SetActive(true);
