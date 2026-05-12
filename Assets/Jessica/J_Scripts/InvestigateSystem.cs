@@ -36,15 +36,23 @@ public class InvestigateSystem : MonoBehaviour, IInteractable
 
         }
         if (isHolding)
-            {
-                this.transform.position = investigatePosition.position;
-            }
+        {
+            //this.gameObject.GetComponent<Rigidbody>().MovePosition(investigatePosition.position);
+            //this.transform.position = investigatePosition.position;
+            //not collide with anything.
+            this.gameObject.GetComponent<BoxCollider>().enabled = false;
+            if (this.gameObject.GetComponent<CapsuleCollider>()) { this.gameObject.GetComponent<CapsuleCollider>().enabled = false; }
+
+
+        }
 
         if (Input.GetMouseButtonUp(0))
         {
             heldItem = null;
             isInteractable = false;
             isHolding = false;
+            this.gameObject.GetComponent<BoxCollider>().enabled = true;
+            if (this.gameObject.GetComponent<CapsuleCollider>()) { this.gameObject.GetComponent<CapsuleCollider>().enabled = true; }
         }
     }
 

@@ -14,6 +14,8 @@ public class CC_Script : MonoBehaviour
 
     CharacterController cc;
 
+
+
     private void Start()
     {
         cc = gameObject.GetComponent<CharacterController>();
@@ -46,5 +48,7 @@ public class CC_Script : MonoBehaviour
         velocity.y = -9.82f;
 
         cc.Move(velocity * Time.deltaTime);
+
+
     }
 }
