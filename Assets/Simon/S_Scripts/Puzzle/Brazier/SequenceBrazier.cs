@@ -37,6 +37,7 @@ public class SequenceBrazier : MonoBehaviour
     {
         if (input == CorrectSequence)
         {
+            SoundManager.PlaySound(SoundType.BraizerIgnite);
             Debug.Log("Victory"); //Open Door
             door.GetComponent<Animator>().SetBool("IsOpen", true);
             door.GetComponent<OpenSystem>().opened = true;
