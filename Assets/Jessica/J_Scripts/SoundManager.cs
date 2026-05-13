@@ -42,7 +42,7 @@ public class SoundManager : MonoBehaviour
         {
             instance.audioSource.clip = instance.soundList[(int)sound];
             instance.audioSource.volume = volume;
-            instance.audioSource.loop = true;
+            instance.audioSource.loop = loop;
             instance.audioSource.Play();
 
         }

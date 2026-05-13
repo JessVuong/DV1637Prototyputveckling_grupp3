@@ -22,13 +22,13 @@ public class Canon : MonoBehaviour, IInteractable
             switch (i)
             {
                 case 0:
-                    hud.ShowHint("Gunpowder loaded", 1f);
+                    hud.ShowHint("I put the gunpowder in...", 1f);
                     break;
                 case 1:
-                    hud.ShowHint("Cannonball loaded", 1f);
+                    hud.ShowHint("I loaded the cannonball...", 1f);
                     break;
                 case 2:
-                    hud.ShowHint("Fuse inserted", 1f);
+                    hud.ShowHint("I inserted the fuse...", 1f);
                     break;
                 case 3:
                     hud.ShowHint("Fire!");

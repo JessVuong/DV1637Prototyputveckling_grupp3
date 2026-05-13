@@ -9,7 +9,6 @@ public class PulleyScript : MonoBehaviour, IInteractable
     public Inventory_System inventory;
     public GameObject door;
     public GameObject hammer;
-    public bool hasInteracted = false;
 
     [Tooltip("HUD")]
     [SerializeField] private HUDControl hud;
@@ -44,10 +43,6 @@ public class PulleyScript : MonoBehaviour, IInteractable
         SoundManager.PlaySound(SoundType.UnlockDoor);
         yield return new WaitForSecondsRealtime(1.5f);
         SoundManager.PlaySound(SoundType.AjarClose);
-        hasInteracted = true;
-
-
-
     }
 
 }

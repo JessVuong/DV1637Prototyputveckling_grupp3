@@ -4,7 +4,6 @@ public class PickupSystem : MonoBehaviour, IInteractable
 {
     public Inventory_System inventory;
     public GameObject playerTorch;
-    [SerializeField] private PulleyScript pulley;
     public GameObject hud;
     public SoundManager soundManager;
 
@@ -26,7 +25,7 @@ public class PickupSystem : MonoBehaviour, IInteractable
         switch (tag)
         {
             case "Start_Torch":
-                // torch noise breaks the camera
+                SoundManager.PlaySound(SoundType.Interact);
                 SoundManager.PlaySound(SoundType.Flame,1, true);
                 inventory.CollectItem(Inv_ItemType.Torch);
                 playerTorch.SetActive(true);
@@ -34,46 +33,53 @@ public class PickupSystem : MonoBehaviour, IInteractable
                 Destroy(gameObject);
                 break;
             case "CellKey_Pickup":
+                SoundManager.PlaySound(SoundType.Interact);
                 inventory.CollectItem(Inv_ItemType.Key);
                 hud.transform.GetChild(2).GetChild(1).gameObject.SetActive(true);
                 Destroy(gameObject);
+                hudScript.ShowHint("I picked up the key...", 1f);
                 break;
             case "Rope_Pickup":
+                SoundManager.PlaySound(SoundType.Interact);
                 inventory.CollectItem(Inv_ItemType.Rope);
                 hud.transform.GetChild(2).GetChild(2).gameObject.SetActive(true);
                 Destroy(gameObject);
+                hudScript.ShowHint("I picked up the rope...", 1f);
                 break;
             case "Paper_Pickup":
+                SoundManager.PlaySound(SoundType.Interact);
                 inventory.AddPaper_Pieces();
                 hud.transform.GetChild(2).GetChild(3).GetChild(inventory.Paper_Pieces-1).gameObject.SetActive(true);
                 Destroy(gameObject);
+                hudScript.ShowHint("I picked up the piece of paper...", 1f);
                 break;
             case "ArmoryKey_Pickup":
+                SoundManager.PlaySound(SoundType.Interact);
                 inventory.CollectItem(Inv_ItemType.Key);
                 hud.transform.GetChild(2).GetChild(4).gameObject.SetActive(true);
                 Destroy(gameObject);
+                hudScript.ShowHint("I picked up the key...", 1f);
                 break;
             case "Hammer_Pickup":
-                if (pulley.hasInteracted)
-                {
-                    inventory.CollectItem(Inv_ItemType.Hammer);
-                    hud.transform.GetChild(2).GetChild(5).gameObject.SetActive(true);
-                    Destroy(gameObject);
-                }
-                else
-                {
-                    hudScript.ShowHint("This looks heavy...");
-                }
-                    break;
+                SoundManager.PlaySound(SoundType.Interact);
+                inventory.CollectItem(Inv_ItemType.Hammer);
+                hud.transform.GetChild(2).GetChild(5).gameObject.SetActive(true);
+                Destroy(gameObject);
+                hudScript.ShowHint("This can probably weigh something down...");
+                break;
             case "Gunpowder_Pickup":
+                SoundManager.PlaySound(SoundType.Interact);
                 inventory.CollectItem(Inv_ItemType.Gunpowder);
                 hud.transform.GetChild(2).GetChild(6).gameObject.SetActive(true);
                 Destroy(gameObject);
+                hudScript.ShowHint("I picked up the pouch of gunpowder...");
                 break;
             case "Cannonball_Pickup":
+                SoundManager.PlaySound(SoundType.Interact);
                 inventory.CollectItem(Inv_ItemType.Cannonball);
                 hud.transform.GetChild(2).GetChild(7).gameObject.SetActive(true);
                 Destroy(gameObject);
+                hudScript.ShowHint("I picked up the cannonball...", 1f);
                 break;
             case "Fuse_Pickup":
                 if (inventory.HasItem(Inv_ItemType.Rope))
@@ -81,12 +87,12 @@ public class PickupSystem : MonoBehaviour, IInteractable
                     SoundManager.PlaySound(SoundType.RopeCut);
                     inventory.CollectItem(Inv_ItemType.Fuse);
                     hud.transform.GetChild(2).GetChild(8).gameObject.SetActive(true);
-                    hudScript.ShowHint("Fuse aquired");
+                    hudScript.ShowHint("I made a fuse by cutting the rope...");
                     
                 }
                 else
                 {
-                    hudScript.ShowHint("I could use this to make a fuse if I had a piece of rope...");
+                    hudScript.ShowHint("I think I saw a rope earlier...", 1f);
                 }
                     break;
         }
