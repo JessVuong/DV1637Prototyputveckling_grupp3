@@ -7,6 +7,8 @@ public class IgniteSystem : MonoBehaviour, IInteractable
     [Tooltip("HUD")]
     [SerializeField] private HUDControl hud;
 
+    public SoundManager soundManager;
+
     public void Interact()
     {
         Ignite();
@@ -22,6 +24,8 @@ public class IgniteSystem : MonoBehaviour, IInteractable
         if (inventory.HasItem(Inv_ItemType.Torch))
         {
             Destroy(gameObject);
+            SoundManager.PlaySound(SoundType.BraizerIgnite);
+
         }
         else
         {
