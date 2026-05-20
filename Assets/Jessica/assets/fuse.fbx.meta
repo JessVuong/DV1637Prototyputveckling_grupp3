@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b32312376ffb8b44689406aa1b7e0145
+guid: 512ebddf6f2b5cd4b8bb416500f2b708
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -7,13 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: colour1
-    second: {fileID: -2653651044934150266, guid: a18bb7cb218fcf24f8cc77ac3030e602, type: 3}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
       name: rope
-    second: {fileID: 2100000, guid: 2093a40e4e43b824297eb693cb25619c, type: 2}
+    second: {fileID: 2100000, guid: 65cfe3949c8fa77499ec5ecef255a347, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

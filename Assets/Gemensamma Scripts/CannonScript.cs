@@ -7,6 +7,9 @@ public class Canon : MonoBehaviour, IInteractable
     public GameObject cannonBall;
     public GameManagerScript victory;
     public SoundManager soundManager;
+    public GameObject fuse;
+    public GameObject grate_hole;
+    public GameObject grate;
 
     private int i = 0;
 
@@ -29,6 +32,7 @@ public class Canon : MonoBehaviour, IInteractable
                     break;
                 case 2:
                     hud.ShowHint("I inserted the fuse...", 1f);
+                    fuse.SetActive(true);
                     break;
                 case 3:
                     hud.ShowHint("Fire!");
@@ -69,6 +73,10 @@ public class Canon : MonoBehaviour, IInteractable
         cannonBall.GetComponent<Animator>().SetTrigger("Fire");
 
         SoundManager.PlaySound(SoundType.FireCannon);
+
+        yield return new WaitForSeconds(0.2f);
+        grate.SetActive(false);
+        grate_hole.SetActive(true);
         
         yield return new WaitForSeconds(2f);
         

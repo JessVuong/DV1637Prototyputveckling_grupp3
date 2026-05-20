@@ -15,6 +15,7 @@ public class GameManagerScript : MonoBehaviour
     {
         timer = gameObject.GetComponent<TimerScript>();
         timer.StartTimer();
+        Application.targetFrameRate = 120;
     }
 
     // Update is called once per frame
@@ -32,6 +33,7 @@ public class GameManagerScript : MonoBehaviour
                 pauseMenu.Pause();
             }
         }
+        //Debug.Log(Time.frameCount / Time.time);
     }
 
     public void Defeat()
