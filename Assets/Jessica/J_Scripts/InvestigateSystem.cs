@@ -8,14 +8,16 @@ public class InvestigateSystem : MonoBehaviour, IInteractable
     private bool isInteractable = false;
     private bool isHolding = false;
     GameObject heldItem;
-    private Rigidbody objectRigidbody;
+    public SoundManager soundManager;
 
-    
+
 
     public void Interact()
     {
         isInteractable = true;
-        
+
+        SoundManager.PlaySound(SoundType.Interact);
+
     }
 
     public string GetInteractionText()
@@ -26,8 +28,10 @@ public class InvestigateSystem : MonoBehaviour, IInteractable
 
     void Update()
     {
+
         if (Input.GetMouseButton(0) && isInteractable) //moue button held + item is interactable
         {
+            
             if (!isHolding)
             {
                 heldItem = this.gameObject;
@@ -39,8 +43,11 @@ public class InvestigateSystem : MonoBehaviour, IInteractable
         {
             //this.gameObject.GetComponent<Rigidbody>().MovePosition(investigatePosition.position);
             this.transform.position = investigatePosition.position;
-            //not collide with anything.
 
+            //remove gravity
+            this.gameObject.GetComponent<Rigidbody>().useGravity = false;
+            
+            //not collide with anything.
             if (this.gameObject.GetComponent<CapsuleCollider>()) { this.gameObject.GetComponent<CapsuleCollider>().enabled = false; }
             if (this.gameObject.GetComponent<BoxCollider>()) { this.gameObject.GetComponent<BoxCollider>().enabled = false; }
             if (this.gameObject.GetComponent<SphereCollider>()) { this.gameObject.GetComponent<SphereCollider>().enabled = false; }
@@ -53,6 +60,8 @@ public class InvestigateSystem : MonoBehaviour, IInteractable
             heldItem = null;
             isInteractable = false;
             isHolding = false;
+
+            this.gameObject.GetComponent<Rigidbody>().useGravity = true;
 
             if (this.gameObject.GetComponent<CapsuleCollider>()) { this.gameObject.GetComponent<CapsuleCollider>().enabled = true; }
             if (this.gameObject.GetComponent<BoxCollider>()) { this.gameObject.GetComponent<BoxCollider>().enabled = true; }

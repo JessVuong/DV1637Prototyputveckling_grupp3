@@ -8,7 +8,10 @@ public enum SoundType
     UnlockDoor,
     AjarClose,
     RopeCut,
-    FireCannon
+    FireCannon,
+    CylinderUnlock,
+    Interact,
+    BackgroundMusic
 
 }
 
@@ -32,19 +35,18 @@ public class SoundManager : MonoBehaviour
 
     public static void PlaySound(SoundType sound, float volume = 1, bool loop = false)
     {
+        //play once
         instance.audioSource.PlayOneShot(instance.soundList[(int)sound], volume);
 
         if (loop) 
         {
             instance.audioSource.clip = instance.soundList[(int)sound];
             instance.audioSource.volume = volume;
-            instance.audioSource.loop = true;
+            instance.audioSource.loop = loop;
             instance.audioSource.Play();
 
         }
 
 
     }
-
-//    public static void PlayLoop(SoundType sound, fl)
 }

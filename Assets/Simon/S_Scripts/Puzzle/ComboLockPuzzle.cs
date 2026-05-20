@@ -54,6 +54,10 @@ public class ComboLockPuzzle : MonoBehaviour, IInteractable
     [SerializeField] private GameObject Torch;
     [Tooltip("InventoryFrame")]
     [SerializeField] private GameObject InventoryFrame;
+
+    public SoundManager soundManager;
+
+
     public void Interact()
     {
         StartPuzzle();
@@ -148,6 +152,7 @@ public class ComboLockPuzzle : MonoBehaviour, IInteractable
         UIPanel.SetActive(false);
 
         LockAnim.SetTrigger("t_LockOpen");
+        SoundManager.PlaySound(SoundType.CylinderUnlock);
         yield return new WaitForSeconds(.5f);
         EndPuzzle();
         this.gameObject.GetComponent<BoxCollider>().enabled = false;
