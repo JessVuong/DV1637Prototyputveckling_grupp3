@@ -1,0 +1,25 @@
+ActiveRay: Albert, Gabriel* (påbörjade)
+IgniteSystem: Albert, Jessica (added sound)
+OpenSystem: Albert, Jessica (added sound)
+PickupSystem: Albert, Jessica (added sound)
+GameManager: Albert
+HUDControl: Albert
+MainMenu: Albert
+PauseMenu: Albert
+TimerScript: Albert
+CannonScript: Jessica, Albert (added hints)
+InvestigateScript: Jessica
+PulleyScript: Jessica, Albert (added hints)
+Killplane: Jessica
+SoundManager: Jessica
+CameraController: Simon
+CC_Script: Simon
+BrazierInteract: Simon
+SequenceBrazier: Simon, Albert (added hints)
+ComboLockPuzzle: Simon, Jessica (added sound)
+PaperDragAndDrop: Simon, Albert (added hints)
+Inventory_System: Gabriel*, Albert (added RemoveItem function)
+IInteractable: Gabriel*
+Inv_ItemType: Gabriel*, Albert (removed some items)
+
+* = När Gabriel blev sjukskriven tog Albert över hans arbete
